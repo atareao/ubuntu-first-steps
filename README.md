@@ -2,27 +2,27 @@
 
 ![CodeFactor](https://www.codefactor.io/repository/github/signalr/signalr/badge?style=plastic)
 
-<img src="./data/icons/cpu-g.png" align="right"
-     title="CPU-G Logo" width="128" height="128">
+<img src="./data/icons/start-here.svg" align="right"
+     title="start-here Logo" width="128" height="128">
 
 
-**things-to-do** is a simple application to help you to tweak Ubuntu with somne features easily.
+**start-here** is a simple application to help you to tweak Ubuntu with somne features easily.
 
-More info: [things-to-do](https://www.atareao.es/aplicacion/cpu-g-donde-ver-hardware-instalado/)
+More info: [start-here](https://www.atareao.es/aplicacion/primeros-pasos-en-Ubuntu-start-here/)
 
 ## Install
 
-To install CPU-G run following commands in a terminal (`Ctrl+Alt+T`),
+To install start-here run following commands in a terminal (`Ctrl+Alt+T`),
 
 ```
 sudo add-apt-repository ppa:atareao/atareao
 sudo apt update
-sudo apt install things-to-do
+sudo apt install start-here
 ```
 
 ## Credits
 
- Copyright © 2016-2019 Lorenzo Carbonell
+ Copyright © 2019 Lorenzo Carbonell
 
 ## Screenshots
 
