@@ -1,0 +1,6 @@
+bin/start-here /opt/extras.ubuntu.com/start-here/bin
+src/*.py /opt/extras.ubuntu.com/start-here/share/start-here
+debian/changelog /opt/extras.ubuntu.com/start-here/share/start-here
+data/start-here.desktop /usr/share/applications
+data/icons/start-here.svg /opt/extras.ubuntu.com/start-here/share/icons
+policykit/actions/com.ubuntu.pkexec.start-here.policy /usr/share/polkit-1/actions/

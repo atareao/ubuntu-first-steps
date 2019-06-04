@@ -1,0 +1,15 @@
+#!/bin/bash
+LOCATIONS=(
+"/opt/extras.ubuntu.com/start-here/share/start-here/start-here.py",
+"/datos/Sync/Programacion/Python/start-here/src/start-here.py"
+)
+echo 1
+for ((i = 0; i < ${#LOCATIONS[@]}; i++))
+do
+    echo 2
+    if [[ -e "${LOCATIONS[${i}]}" ]]; then
+        echo 1
+        python3 ${LOCATIONS[${i}]} $1
+        break
+    fi
+done
