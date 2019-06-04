@@ -26,34 +26,4 @@ sudo apt install start-here
 
 ## Screenshots
 
-### Processor
 
-![Processor](./screenshots/cpu-g-processor.png)
-
-### Motherboard
-
-![Motherboard](./screenshots/cpu-g-motherboard.png)
-
-### Memory
-
-![Memory](./screenshots/cpu-g-memory.png)
-
-### System
-
-![System](./screenshots/cpu-g-system.png)
-
-### Graphic
-
-![Graphic](./screenshots/cpu-g-graphic.png)
-
-### Battery
-
-![Battery](./screenshots/cpu-g-battery.png)
-
-### Disks
-
-![Disks](./screenshots/cpu-g-disks.png)
-
-### About
-
-![About](./screenshots/cpu-g-about.png)
