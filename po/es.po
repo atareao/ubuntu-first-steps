@@ -1,14 +1,14 @@
-# Spanish translations for cpu-g package.
+# Spanish translations for start-here package.
 # Copyright (C) 2019 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the cpu-g package.
+# This file is distributed under the same license as the start-here package.
 # Lorenzo <lorenzo.carbonell.cerezo@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cpu-g - 0.15.2-1ubuntu0\n"
+"Project-Id-Version: start-here - 0.0.5-19.04ubuntu0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-20 06:33+0100\n"
-"PO-Revision-Date: 2019-02-01 20:59+0100\n"
+"POT-Creation-Date: 2019-06-05 22:05+0200\n"
+"PO-Revision-Date: 2019-06-05 21:51+0200\n"
 "Last-Translator: Lorenzo <lorenzo.carbonell.cerezo@gmail.com>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
@@ -17,479 +17,383 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/cpug.py:69
-msgid "Processor"
-msgstr "Procesador"
-
-#: src/cpug.py:70
-msgid "General"
-msgstr "General"
-
-#: src/cpug.py:74 src/cpug.py:268 src/cpug.py:294
-msgid "Vendor"
-msgstr "Fabricante"
-
-#: src/cpug.py:85 src/cpug.py:128 src/cpug.py:279
-msgid "Model"
-msgstr "Modelo"
-
-#: src/cpug.py:96
-msgid "Core Speed"
-msgstr "Velocidad del núcleo"
-
-#: src/cpug.py:112
-msgid "CPU"
-msgstr "CPU"
-
-#: src/cpug.py:116
-msgid "Family"
-msgstr "Familia"
-
-#: src/cpug.py:140
-msgid "Stepping"
-msgstr ""
-
-#: src/cpug.py:152
-msgid "Flags"
-msgstr ""
-
-#: src/cpug.py:163
-msgid "Bogomips"
-msgstr ""
-
-#: src/cpug.py:174
-msgid "Width"
-msgstr ""
-
-#: src/cpug.py:187
-msgid "Cache"
-msgstr ""
-
-#: src/cpug.py:191
-msgid "L1 Data"
-msgstr ""
-
-#: src/cpug.py:202
-msgid "L1 Instruction"
-msgstr ""
-
-#: src/cpug.py:213
-msgid "Level 2"
-msgstr "Nivel 2"
-
-#: src/cpug.py:224
-msgid "Level 3"
-msgstr "Nivel 3"
-
-#: src/cpug.py:236
-msgid "Core selection"
-msgstr "Selección del núcleo"
-
-#: src/cpug.py:240
-msgid "Number of cores"
-msgstr "Número de núclos"
-
-#: src/cpug.py:263
-msgid "Motherboard"
-msgstr "Placa madre"
-
-#: src/cpug.py:264
-msgid "Board"
-msgstr "Tablero"
-
-#: src/cpug.py:290
-msgid "Bios"
-msgstr "Bios"
-
-#: src/cpug.py:305
-msgid "Version"
-msgstr "Versión"
-
-#: src/cpug.py:316
-msgid "Date"
-msgstr "Fecha"
-
-#: src/cpug.py:329
-msgid "Memory"
-msgstr "Memoria"
-
-#: src/cpug.py:330
-msgid "Ram"
-msgstr "Ram"
-
-#: src/cpug.py:334 src/cpug.py:465
-msgid "Total"
-msgstr "Total"
-
-#: src/cpug.py:341
-msgid "Total physical memory available."
-msgstr "Memoria física total disponible"
-
-#: src/cpug.py:346
-msgid "Available"
-msgstr "Disponible"
-
-#: src/cpug.py:353
-msgid ""
-"The actual amount of available memory that can be given instantly to "
-"processes that request more memory in bytes; this is calculated by summing "
-"different memory values (Mb)"
-msgstr ""
-"La cantida de memoria disponible actual que puede ser ofrecida de forma "
-"instantánea a los procesos que necesitan mas memoria en bytes; esto se "
-"calcula sumando los diferentes valores de memoria (Mb)"
-
-#: src/cpug.py:368 src/cpug.py:478
-msgid "Used"
-msgstr "Usada"
-
-#: src/cpug.py:375
-msgid ""
-"Memory used, calculated differently depending on the platform and designed "
-"for informational purposes only (Mb)"
-msgstr ""
-"Memoria usada, caluculada de forma diferente en función de la plataforma y "
-"pensada solo con propósitos informativos (Mb)"
-
-#: src/cpug.py:389 src/cpug.py:498
-msgid "Free"
-msgstr "Libre"
-
-#: src/cpug.py:396
-msgid "Memory not being used at all (zeroed) that is readily available (Mb)"
-msgstr "Memoria que no se está utilizando en absotulo (Mb)"
-
-#: src/cpug.py:410
-msgid "Active"
-msgstr "Activa"
-
-#: src/cpug.py:417
-msgid "Memory currently in use or very recently used, and so it is in RAM (Mb)"
-msgstr "Memoria que está en uso o ha sido usada recientemente, así es RAM (Mb)"
-
-#: src/cpug.py:423
-msgid "Inactive"
-msgstr "Inactiva"
-
-#: src/cpug.py:430
-msgid "Memory that is marked as not used."
-msgstr "Memoria que está marcada como noutilizada."
-
-#: src/cpug.py:436
-msgid "Buffers"
-msgstr "Memoria intermedia"
-
-#: src/cpug.py:443
-msgid "Ccache for things like file system metadata. (Mb)"
-msgstr "Cache para usos como la metainformación del sistema de archivos (Mb)"
-
-#: src/cpug.py:449
-msgid "Cached"
-msgstr "Cacheada"
-
-#: src/cpug.py:456
-msgid "Cache for various things (Mb)"
-msgstr "Caché para usos varios (Mb)"
-
-#: src/cpug.py:461
-msgid "Swap"
-msgstr "Memoria de intercambio"
-
-#: src/cpug.py:472
-msgid "Total physical memory available in Mb."
-msgstr "Memoria física total disponible en Mb."
-
-#: src/cpug.py:485
-msgid "Used swap memory in Mb"
-msgstr "Memoria de intercambio utilizada en Mb"
-
-#: src/cpug.py:505
-msgid "Free swap memory in Mb"
-msgstr "Memoria de intercambio libre en Mb"
-
-#: src/cpug.py:518
-msgid "Sin"
-msgstr "Entrada"
-
-#: src/cpug.py:525
-msgid "The number of Mb the system has swapped in from disk (cumulative)"
-msgstr "Número de Mb del sistema que ha pasado a la memoria de intercambio"
-
-#: src/cpug.py:531
-msgid "Sout"
-msgstr "Salida"
-
-#: src/cpug.py:538
-msgid "The number of Mb the system has swapped out from disk (cumulative)"
-msgstr "Número de Mb del sistema que ha salido de la memoria de intercambio"
-
-#: src/cpug.py:547
-msgid "System"
-msgstr "Systema"
-
-#: src/cpug.py:552
-msgid "Hostname"
-msgstr ""
-
-#: src/cpug.py:563
-msgid "Architecture"
-msgstr "Arquitectura"
-
-#: src/cpug.py:574
-msgid "Kernel"
-msgstr "Núcleo"
-
-#: src/cpug.py:585
-msgid "GCC Version"
-msgstr "Versión de GCC"
-
-#: src/cpug.py:596
-msgid "Uptime"
-msgstr "Tiempo en marcha"
-
-#: src/cpug.py:607
-msgid "Xorg version"
-msgstr "Versión Xorg"
-
-#: src/cpug.py:618
-msgid "Resolution"
-msgstr "Resolución"
-
-#: src/cpug.py:630
-msgid "Distribution"
-msgstr "Distribución"
-
-#: src/cpug.py:641
-msgid "Desktop environment"
-msgstr "Entorno de escritorio"
-
-#: src/cpug.py:653
-msgid "Window manager"
-msgstr "Gestor de ventanas"
-
-#: src/cpug.py:673
-msgid "Graphic"
-msgstr "Gráfica"
-
-#: src/cpug.py:678
-msgid "Graphic Controller"
-msgstr "Controladora gráfica"
-
-#: src/cpug.py:689
-msgid "OpenGL Vendor"
-msgstr "Fabricante OpenGL"
-
-#: src/cpug.py:700
-msgid "OpenGL renderer"
-msgstr "Renderizador OpenGL"
-
-#: src/cpug.py:711
-msgid "OpenGL version"
-msgstr "Versión de OpenGL"
-
-#: src/cpug.py:731 src/upower.py:102
+#: src/installer.py:67
+msgid "Add ppa repository"
+msgstr "Añade un repositorio PPA"
+
+#: src/installer.py:114
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/installer.py:130 src/installer.py:145
+msgid "Exit"
+msgstr "Salir"
+
+#: src/installer.py:133
+msgid "Installation completed!"
+msgstr "¡Instalación completa!"
+
+#: src/installer.py:136
+msgid "Installation NOT completed!"
+msgstr "¡NO se ha completado la instalación!"
+
+#: src/installer.py:156
+#, python-format
+msgid "Executing: %s"
+msgstr "Ejecutando: %s"
+
+#: src/installer.py:182
+msgid "Do you want to stop the installation?"
+msgstr "¿Quieres abandonar la instalación?"
+
+#: src/tweak_repositories.py:103 src/mainwindow.py:178
+msgid "Repositories"
+msgstr "Repositorios"
+
+#: src/tweak_desktop.py:62 src/mainwindow.py:172
+msgid "Custom desktop"
+msgstr "Personaliza el escritorio"
+
+#: src/tweak_desktop.py:76
+msgid "Small"
+msgstr "Pequeño"
+
+#: src/tweak_desktop.py:77
+msgid "Standard"
+msgstr "Estandar"
+
+#: src/tweak_desktop.py:78
+msgid "Large"
+msgstr "Grande"
+
+#: src/tweak_desktop.py:86
+msgid "Icon size"
+msgstr "Tamaño de icono"
+
+#: src/tweak_desktop.py:87
+msgid "Set the icon size on the desktop."
+msgstr "Establece el tamaño de los iconos en el escritorio"
+
+#: src/tweak_desktop.py:90
+msgid "Hide home"
+msgstr "Oculta el directorio Home"
+
+#: src/tweak_desktop.py:91
+msgid "Hide your user folder."
+msgstr "Oculta el directorio del usuario"
+
+#: src/tweak_desktop.py:94
+msgid "Hide trash"
+msgstr "Oculta la papelera"
+
+#: src/tweak_desktop.py:95
+msgid "Hide the trash folder."
+msgstr "Oculta el directorio de la papelera"
+
+#: src/tweak_desktop.py:98
+msgid "Calendar"
+msgstr "Calendario"
+
+#: src/tweak_desktop.py:110
+msgid "Show week number"
+msgstr "Muestra el número de semana"
+
+#: src/tweak_desktop.py:111
+msgid "Show week number in calendar."
+msgstr "Muestra el número de la semana en el calendario"
+
+#: src/tweak_desktop.py:114
+msgid "Hide date"
+msgstr "Oculta la fecha"
+
+#: src/tweak_desktop.py:115
+msgid "Hide date in the watch"
+msgstr "Oculta la fecha en el reloj"
+
+#: src/tweak_desktop.py:118
+msgid "Show seconds"
+msgstr "Muestra segundos"
+
+#: src/tweak_desktop.py:119
+msgid "Show seconds in the watch"
+msgstr "Muestra los segundos en el reloj"
+
+#: src/tweak_desktop.py:122
+msgid "Show weekday"
+msgstr "Muestra el día de la semana"
+
+#: src/tweak_desktop.py:123
+msgid "Show weekday in the watch"
+msgstr "Muestra el día de la semana en el reloj"
+
+#: src/tweak_desktop.py:126
 msgid "Battery"
 msgstr "Batería"
 
-#: src/cpug.py:737
-msgid "Manufacturer"
-msgstr "Fabricante"
+#: src/tweak_desktop.py:137
+msgid "Show battery percentage"
+msgstr "Muestra el porcentaje de batería"
 
-#: src/cpug.py:749
-msgid "Model name"
-msgstr "Modelo"
+#: src/tweak_desktop.py:138
+msgid "Show battery percentage."
+msgstr "Muestra el porcentaje de batería"
 
-#: src/cpug.py:761
-msgid "Serial number"
-msgstr "Número de serie"
+#: src/tweak_desktop.py:141
+msgid "Experimental"
+msgstr "Experimental"
 
-#: src/cpug.py:773
-msgid "Technology"
-msgstr "Tecnología"
+#: src/tweak_desktop.py:152
+msgid "Enable HiDPI Fractional Scaling"
+msgstr "Habilita el escalado HiDPI fracionado"
 
-#: src/cpug.py:785
-msgid "Estimated time remaining"
-msgstr "Tiempo restante estimado"
+#: src/tweak_desktop.py:153
+msgid "Enable experimenal HiDPI Fractional Scaling."
+msgstr "Habilita el escalado HiDPI fracionado"
 
-#: src/cpug.py:797
-msgid "Estimated battery discharge time"
-msgstr "Tiempo estimado de descarga de batería"
+#: src/tweak_privacy.py:62
+msgid "Peripherals"
+msgstr "Periféricos"
 
-#: src/cpug.py:809
-msgid "Battery level"
-msgstr "Nivel de batería"
+#: src/tweak_privacy.py:75
+msgid "Disable camera"
+msgstr "Deshabilita la cámara"
 
-#: src/cpug.py:829
-msgid "Capacity level"
-msgstr "Nivel de capacidad"
+#: src/tweak_privacy.py:76
+msgid "Avoid applications to use the camera."
+msgstr "Evita que las aplicaciones puedan utilizar la cámara."
 
-#: src/cpug.py:841
-msgid "Voltage now"
-msgstr "Voltage actual"
+#: src/tweak_privacy.py:78
+msgid "Disable microphone"
+msgstr "Deshabilita el micrófono."
 
-#: src/cpug.py:853
-msgid "Minimum voltage design"
-msgstr "Voltage de diseño mínimo"
+#: src/tweak_privacy.py:79
+msgid "Avoid applications to use the microphone."
+msgstr "Evita que las aplicaciones puedan utilizar el micrófono."
 
-#: src/cpug.py:865
-msgid "Charge now"
-msgstr "Carga actual"
+#: src/tweak_privacy.py:81
+msgid "Disable sound outp"
+msgstr "Deshabilita el sonido"
 
-#: src/cpug.py:877
-msgid "Charge full"
-msgstr "Carga completa"
+#: src/tweak_privacy.py:82
+msgid "Avoid applications to play sound."
+msgstr "Evita que las aplicaciones puedan reproducir sonido."
 
-#: src/cpug.py:889
-msgid "Charge full design"
-msgstr "Carga completa de diseño"
+#: src/tweak_privacy.py:85
+msgid "Identity"
+msgstr "Identidad"
 
-#: src/cpug.py:901
-msgid "Current now"
-msgstr "Corriente actual"
+#: src/tweak_privacy.py:96
+msgid "Hide identity"
+msgstr "Oculta tu identidad"
 
-#: src/cpug.py:927
-msgid "Disks"
-msgstr "Discos"
+#: src/tweak_privacy.py:97
+msgid "Hide personal information."
+msgstr "Oculta información personal"
 
-#: src/cpug.py:938
+#: src/tweak_privacy.py:100
+msgid "Remember"
+msgstr "Recuerda"
+
+#: src/tweak_privacy.py:112
+msgid "Forget application usage"
+msgstr "Olvida el uso de aplicaciones"
+
+#: src/tweak_privacy.py:113
+msgid "Forget application usage."
+msgstr "Olvida el uso de aplicaciones"
+
+#: src/tweak_privacy.py:116
+msgid "Forget recent files"
+msgstr "Olvida los archivos recientes"
+
+#: src/tweak_privacy.py:117
+msgid "Forget recent files."
+msgstr "Olvida los archivos recientes"
+
+#: src/tweak_privacy.py:120
+msgid "Remove temporary files"
+msgstr "Borra los archivos temporales"
+
+#: src/tweak_privacy.py:121
+msgid "Remove old temporary files automatically."
+msgstr "Borra los archivos temporales antiguos automáticamente"
+
+#: src/tweak_privacy.py:124
+msgid "Remove trash files"
+msgstr "Borra los archivos en la papelera"
+
+#: src/tweak_privacy.py:125
+msgid "Remove old trash files automatically."
+msgstr "Borra los archivos antiguos de la papelera automáticamente"
+
+#: src/tweak_privacy.py:128
+msgid "Statistics"
+msgstr "Estadísticas"
+
+#: src/tweak_privacy.py:140
+msgid "Send technical problems"
+msgstr "Envía problemas técnicos"
+
+#: src/tweak_privacy.py:141
+msgid "Send technical problems."
+msgstr "Envía problemas técnicos"
+
+#: src/tweak_privacy.py:144
+msgid "Send software usage"
+msgstr "Envía uso de software"
+
+#: src/tweak_privacy.py:145
+msgid "Send softwarew usage statistics."
+msgstr "Envía estadísticas de uso de software."
+
+#: src/tweak_packages.py:101 src/mainwindow.py:181
+msgid "Applications"
+msgstr "Aplicaciones"
+
+#: src/tweak_dock.py:62 src/mainwindow.py:169
+msgid "Custom dock"
+msgstr "Personalizar el dock"
+
+#: src/tweak_dock.py:76
+msgid "Left"
+msgstr "Izquierda"
+
+#: src/tweak_dock.py:77
+msgid "Right"
+msgstr "Derecha"
+
+#: src/tweak_dock.py:78
+msgid "Top"
+msgstr "Arriba"
+
+#: src/tweak_dock.py:79
+msgid "Bottom"
+msgstr "Abajo"
+
+#: src/tweak_dock.py:87
+msgid "Dock position"
+msgstr "Posición del dock"
+
+#: src/tweak_dock.py:88
+msgid "Set the dock position on the screen."
+msgstr "Establece la posición del dock en la pantalla."
+
+#: src/tweak_dock.py:91
+msgid "Enable minimize click action"
+msgstr "Habilita la acción de minimizado por click en el dock"
+
+#: src/tweak_dock.py:92
+msgid "Minimize when clicking on a running app."
+msgstr "Minimiza cuando se hace click en una aplicación"
+
+#: src/tweak_dock.py:95
+msgid "Reduce dock length"
+msgstr "Reduce el tamaño del dock"
+
+#: src/tweak_dock.py:96
+msgid "Reduce the dock container to icons."
+msgstr "Reduce el dock al minimo para contener iconos"
+
+#: src/tweak_dock.py:99
+msgid "Force straight corner"
+msgstr "Fuerza las esquinas rectas"
+
+#: src/tweak_dock.py:100
+msgid "Make the borders in the dash non rounded."
+msgstr "Hace que los bordes del dock sean rectos"
+
+#: src/tweak_dock.py:115
+msgid "Isolate monitors"
+msgstr "Aisla los monitores"
+
+#: src/tweak_dock.py:116
+msgid "Provide monitor isolation"
+msgstr "Aisla los monitores"
+
+#: src/tweak_dock.py:118
+msgid "Multi monitor"
+msgstr "Multi monitor"
+
+#: src/tweak_dock.py:119
+msgid "Enable multi monitor dock"
+msgstr "Habilita el dock en varios monitores"
+
+#: src/tweak_dock.py:134 src/tweak_dock.py:135
+msgid "Hide applications button"
+msgstr "Oculta el botón de aplicaciones"
+
+#: src/tweak_dock.py:137
+msgid "Show apps at top"
+msgstr "Muestra el botón de aplicaciones en la parte superior"
+
+#: src/tweak_dock.py:138
+msgid "Show application button at top"
+msgstr "Muestra el botón de aplicaciones en la parte superior"
+
+#: src/tweak_dock.py:140
+msgid "Hide favorites"
+msgstr "Oculta los favoritos"
+
+#: src/tweak_dock.py:141
+msgid "Hide favorites apps"
+msgstr "Oculta las aplicaciones favoritas del dock"
+
+#: src/tweak_dock.py:143
+msgid "Hide running"
+msgstr "Oculta las aplicaciones en ejecución"
+
+#: src/tweak_dock.py:144
+msgid "Hide running apps"
+msgstr "Oculta las aplicaciones en ejecución en el dock"
+
+#: src/application.py:52
+msgid "start-here"
+msgstr "Primeros pasos"
+
+#: src/application.py:148
+msgid "First steps in Ubuntu"
+msgstr "Primeros pasos en Ubuntu"
+
+#: src/mainwindow.py:175
+msgid "Privacy"
+msgstr "Privacidad"
+
+#: src/mainwindow.py:260
+msgid "Apply changes"
+msgstr "Aplicar todos los cambios"
+
+#: src/mainwindow.py:269
+msgid "Homepage"
+msgstr "Web"
+
+#: src/mainwindow.py:274
+msgid "Code"
+msgstr "Código"
+
+#: src/mainwindow.py:275
+msgid "Issues"
+msgstr "Problemas"
+
+#: src/mainwindow.py:280
+msgid "Twitter"
+msgstr "Twitter"
+
+#: src/mainwindow.py:281
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/mainwindow.py:286
+msgid "Donations"
+msgstr "Donaciones"
+
+#: src/mainwindow.py:291
 msgid "About"
-msgstr "Acerca de"
+msgstr "Acerca de..."
 
-#: src/cpug.py:1057
-msgid " %"
-msgstr "%"
+#: src/mainwindow.py:296
+msgid "Quit"
+msgstr "Salir"
 
-#: src/cpug.py:1067 src/cpug.py:1073
-msgid " V"
-msgstr " V"
-
-#: src/cpug.py:1079 src/cpug.py:1085 src/cpug.py:1091
-msgid " Ah"
-msgstr " Ah"
-
-#: src/cpug.py:1097
-msgid " A"
-msgstr " A"
-
-#: src/cpug.py:1107 src/cpug.py:1109 src/cpug.py:1113 src/cpug.py:1116
-#: src/cpug.py:1119 src/cpug.py:1121 src/cpug.py:1123 src/cpug.py:1125
-#: src/cpug.py:1128 src/cpug.py:1132 src/cpug.py:1135 src/cpug.py:1138
-#: src/cpug.py:1140 src/cpug.py:1270 src/cpug.py:1283 src/cpug.py:1304
-msgid "MB"
-msgstr "MB"
-
-#: src/cpug.py:1206
-msgid "Device"
-msgstr "Dispositivo"
-
-#: src/cpug.py:1218
-msgid "Mount Point"
-msgstr "Punto de montaje"
-
-#: src/cpug.py:1230
-msgid "File System Type"
-msgstr "Tipo de sistema de archivos"
-
-#: src/cpug.py:1242
-msgid "Options"
-msgstr "Opciones"
-
-#: src/cpug.py:1258
-msgid "Total space"
-msgstr "Espacio total"
-
-#: src/cpug.py:1271
-msgid "Used space"
-msgstr "Espacio en uso"
-
-#: src/cpug.py:1292
-msgid "Free space"
-msgstr "Espacio libre"
-
-#: src/upower.py:98 src/upower.py:115 src/upower.py:159 src/upower.py:172
-#: src/upower.py:180 src/upower.py:193
-msgid "Unknown"
-msgstr ""
-
-#: src/upower.py:100
-msgid "Line Power"
-msgstr ""
-
-#: src/upower.py:104
-msgid "Ups"
-msgstr ""
-
-#: src/upower.py:106
-msgid "Monitor"
-msgstr ""
-
-#: src/upower.py:108
-msgid "Mouse"
-msgstr ""
-
-#: src/upower.py:110
-#, fuzzy
-msgid "Keyboard"
-msgstr "Placa madre"
-
-#: src/upower.py:112
-msgid "Pda"
-msgstr "Pda"
-
-#: src/upower.py:114
-msgid "Phone"
-msgstr "Teléfono"
-
-#: src/upower.py:161
-msgid "Charging"
-msgstr "Cargando"
-
-#: src/upower.py:163
-msgid "Discharging"
-msgstr "Descargando"
-
-#: src/upower.py:165
-msgid "Empty"
-msgstr "Vacía"
-
-#: src/upower.py:167
-msgid "Fully charged"
-msgstr "Completamente cargada"
-
-#: src/upower.py:169
-msgid "Pending charge"
-msgstr "Pendiente de carga"
-
-#: src/upower.py:171
-msgid "Pending discharge"
-msgstr "Pendiente de descarga"
-
-#: src/upower.py:182
-msgid "Lithium ion"
-msgstr "Ion Litio"
-
-#: src/upower.py:184
-msgid "Lithium polymer"
-msgstr "Litio polímero"
-
-#: src/upower.py:186
-msgid "Lithium iron phosphate"
-msgstr "Litio hierro fosfato"
-
-#: src/upower.py:188
-msgid "Lead acid"
-msgstr "Plomo ácido"
-
-#: src/upower.py:190
-msgid "Nickel cadmium"
-msgstr "Niquel cadmio"
-
-#: src/upower.py:192
-msgid "Nickel metal hydride"
-msgstr "Niquel metal híbrido"
-
-#: src/investigator.py:55 src/investigator.py:62 src/investigator.py:294
-#: src/investigator.py:315 src/investigator.py:323 src/investigator.py:407
-#: src/investigator.py:411 src/investigator.py:415 src/investigator.py:419
-msgid "N/A"
-msgstr "N/A"
+#: src/mainwindow.py:301
+msgid "Help"
+msgstr "Ayuda"

@@ -145,7 +145,7 @@ class Application(Gtk.Application):
         ad.set_name(comun.APPNAME)
         ad.set_version(comun.VERSION)
         ad.set_copyright('Copyrignt (c) 2019\nLorenzo Carbonell')
-        ad.set_comments(_('An audio player for YouTube'))
+        ad.set_comments(_('First steps in Ubuntu'))
         ad.set_license('''
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
