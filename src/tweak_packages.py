@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: UTF-8 -*-
 #
-# mainwindow.py
+# start-here is an application that helps you to tweak Ubuntu,
+# after install a new version of Ubuntu. First stepts with Ubuntu.
 #
-# This file is part of yoaup (YouTube Audio Player)
-#
-# Copyright (C) 2017
-# Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
+# Copyright © 2019  Lorenzo Carbonell (aka atareao)
+# <lorenzo.carbonell.cerezo at gmail dotcom>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,26 +20,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 import gi
 try:
     gi.require_version('Gtk', '3.0')
-    gi.require_version('Gdk', '3.0')
     gi.require_version('Gio', '2.0')
-    gi.require_version('GLib', '2.0')
-    gi.require_version('GObject', '2.0')
-    gi.require_version('GdkPixbuf', '2.0')
-    gi.require_version('Notify', '0.7')
+    gi.require_version('Handy', '0.0')
 except Exception as e:
     print(e)
     exit(1)
 from gi.repository import Gtk
-from gi.repository import Gdk
 from gi.repository import Gio
-from gi.repository import GLib
-from gi.repository import GObject
-from gi.repository import GdkPixbuf
-from gi.repository import Notify
 from gi.repository import Handy
 import os
 import glob
@@ -124,6 +113,11 @@ class TweakPackages(Gtk.Overlay):
             listbox0.add(SettingRow(self.packages[index][0],
                                     self.packages[index][1],
                                     self.options[index]))
+            self.options[index].set_state(
+                self.is_installed(self.packages[index][2]))
+
+    def update(self):
+        for index in range(0, len(self.packages)):
             self.options[index].set_state(
                 self.is_installed(self.packages[index][2]))
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 #
-# things-to-do is a program that helps you to tweak Ubuntu,
-# after install a new version of Ubuntu.
+# start-here is an application that helps you to tweak Ubuntu,
+# after install a new version of Ubuntu. First stepts with Ubuntu.
 #
 # Copyright © 2019  Lorenzo Carbonell (aka atareao)
 # <lorenzo.carbonell.cerezo at gmail dotcom>
@@ -23,22 +23,16 @@
 import gi
 try:
     gi.require_version('Gtk', '3.0')
-    gi.require_version('Gdk', '3.0')
-    gi.require_version('GObject', '2.0')
     gi.require_version('Gio', '2.0')
     gi.require_version('GLib', '2.0')
     gi.require_version('GdkPixbuf', '2.0')
-    gi.require_version('Notify', '0.7')
 except Exception as e:
     print(e)
     exit(1)
 from gi.repository import Gtk
-from gi.repository import Gdk
-from gi.repository import GObject
 from gi.repository import Gio
 from gi.repository import GLib
 from gi.repository import GdkPixbuf
-from gi.repository import Notify
 
 from comun import _
 import comun
@@ -78,20 +72,35 @@ class Application(Gtk.Application):
                 callback=lambda x, y: webbrowser.open(
                     'http://www.atareao.es/'))
         self.__add_action(
+            'goto_twitter',
+            callback=lambda x, y: webbrowser.open(
+                'http://twitter.com/atareao'))
+        self.__add_action(
+            'goto_github',
+            callback=lambda x, y: webbrowser.open(
+                'https://github.com/atareao'))
+        self.__add_action(
             'goto_code',
             callback=lambda x, y: webbrowser.open(
-                'https://code.launchpad.net/yoaup'))
+                'https://github.com/atareao/start-here'))
         self.__add_action(
             'goto_bug',
             callback=lambda x, y: webbrowser.open(
-                'https://bugs.launchpad.net/yoaup'))
+                'https://github.com/atareao/start-here/issues'))
         self.__add_action(
             'goto_sugestion',
             callback=lambda x, y: webbrowser.open(
-                'https://blueprints.launchpad.net/yoaup'))
+                'https://github.com/atareao/start-here/issues'))
+        self.__add_action(
+            'goto_donate',
+            callback=lambda x, y: webbrowser.open(
+                'https://www.atareao.es/donar/'))
         self.__add_action(
             'about',
             callback=self.on_about_activate)
+        self.__add_action(
+            'quit',
+            callback=self.__on_quit)
 
         # Keyboard shortcuts. This includes actions defined in window.py.in
         self.set_accels_for_action("app.shortcuts", ["<Ctrl>question"])
@@ -128,7 +137,7 @@ class Application(Gtk.Application):
         self.add_action(action)
 
     def __on_quit(self, *_):
-        Window.get_default().close()
+        self.get_active_window().close()
         self.quit()
 
     def on_about_activate(self, widget, optional):

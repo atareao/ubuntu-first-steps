@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding: UTF-8 -*-
 #
-# utils.py
+# start-here is an application that helps you to tweak Ubuntu,
+# after install a new version of Ubuntu. First stepts with Ubuntu.
 #
-# This file is part of yoaup (YouTube Audio Player)
-#
-# Copyright (C) 2017
-# Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
+# Copyright © 2019  Lorenzo Carbonell (aka atareao)
+# <lorenzo.carbonell.cerezo at gmail dotcom>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +19,6 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 
 import requests
 import gi

@@ -1,10 +1,11 @@
-#! /usr/bin/env python3
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
 #
-# This file is part of ppaurl
+# start-here is an application that helps you to tweak Ubuntu,
+# after install a new version of Ubuntu. First stepts with Ubuntu.
 #
-# Copyright (C) 2016-2017 Lorenzo Carbonell
-# lorenzo.carbonell.cerezo@gmail.com
+# Copyright © 2019  Lorenzo Carbonell (aka atareao)
+# <lorenzo.carbonell.cerezo at gmail dotcom>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

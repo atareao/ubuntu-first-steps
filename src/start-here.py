@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 #
-# start-here is a program that helps you to tweak Ubuntu,
-# after install a new version of Ubuntu.
+# start-here is an application that helps you to tweak Ubuntu,
+# after install a new version of Ubuntu. First stepts with Ubuntu.
 #
 # Copyright © 2019  Lorenzo Carbonell (aka atareao)
 # <lorenzo.carbonell.cerezo at gmail dotcom>
@@ -24,12 +24,10 @@ import os
 import sys
 import gi
 try:
-    gi.require_version('Gtk', '3.0')
     gi.require_version('Handy', '0.0')
 except Exception as e:
     print(e)
     exit(-1)
-from gi.repository import Gtk
 from gi.repository import Handy
 
 if __name__ == '__main__':

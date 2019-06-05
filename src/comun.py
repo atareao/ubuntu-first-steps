@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 #
-# start-here is a program that helps you to tweak Ubuntu,
-# after install a new version of Ubuntu.
+# start-here is an application that helps you to tweak Ubuntu,
+# after install a new version of Ubuntu. First stepts with Ubuntu.
 #
 # Copyright © 2019  Lorenzo Carbonell (aka atareao)
 # <lorenzo.carbonell.cerezo at gmail dotcom>
@@ -33,7 +33,7 @@ def is_package():
 
 
 APP = 'start-here'
-APPNAME = 'Things to do'
+APPNAME = 'Start here'
 
 # check if running from source
 if is_package():
