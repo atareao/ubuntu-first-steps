@@ -129,7 +129,6 @@ class TweakPackages(Gtk.Overlay):
 
     def set_selected(self):
         to_install = []
-        installed_ppas = self.get_installed_ppas()
         for index in range(0, len(self.packages)):
             if self.options[index].get_state() is True and \
                     self.is_installed(self.packages[index][2]) is False:
