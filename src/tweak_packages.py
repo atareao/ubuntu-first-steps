@@ -129,11 +129,15 @@ class TweakPackages(Gtk.Overlay):
 
     def set_selected(self):
         to_install = []
+        to_remove = []
         for index in range(0, len(self.packages)):
-            if self.options[index].get_state() is True and \
-                    self.is_installed(self.packages[index][2]) is False:
-                to_install.append(self.packages[index][2])
-        return to_install
+            if self.options[index].get_state() is True:
+                if self.is_installed(self.packages[index][2]) is False:
+                    to_install.append(self.packages[index][2])
+            else:
+                if self.is_installed(self.packages[index][2]) is True:
+                    to_remove.append(self.packages[index][2])
+        return to_install, to_remove
 
     def is_installed(self, package):
         args = ['dpkg-query', '-W', '-f=\'${Status}\'', package]

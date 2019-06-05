@@ -132,12 +132,16 @@ mostly updated to their latest versions',
 
     def set_selected(self):
         to_install = []
+        to_remove = []
         installed_ppas = self.get_installed_ppas()
         for index in range(0, len(self.ppas)):
-            if self.options[index].get_state() is True and \
-                    self.ppas[index][2] not in installed_ppas:
-                to_install.append(self.ppas[index][2])
-        return to_install
+            if self.options[index].get_state() is True:
+                if self.ppas[index][2] not in installed_ppas:
+                    to_install.append(self.ppas[index][2])
+            else:
+                if self.ppas[index][2] in installed_ppas:
+                    to_remove.append(self.ppas[index][2])
+        return to_install, to_remove
 
     def get_installed_ppas(self):
         ppas = []
