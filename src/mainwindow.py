@@ -56,6 +56,7 @@ from tweak_desktop import TweakDesktop
 from tweak_privacy import TweakPrivacy
 from tweak_repositories import TweakRepositories
 from tweak_packages import TweakPackages
+from installer import Installer
 
 
 DEFAULT_CURSOR = Gdk.Cursor(Gdk.CursorType.ARROW)
@@ -231,10 +232,12 @@ class MainWindow(Gtk.ApplicationWindow):
     def on_apply_clicked(self, *args):
         print('clicked')
         # self.tweakDock.set_selected()
-        #self.tweakDesktop.set_selected()
-        self.tweakPrivacy.set_selected()
-        # self.tweakRepositories.set_selected()
-        # self.tweakPackages.set_selected()
+        # self.tweakDesktop.set_selected()
+        # self.tweakPrivacy.set_selected()
+        ppas = self.tweakRepositories.set_selected()
+        apps = self.tweakPackages.set_selected()
+        installer = Installer(ppas, apps)
+        installer.run()
 
     def init_headerbar(self):
         self.control = {}

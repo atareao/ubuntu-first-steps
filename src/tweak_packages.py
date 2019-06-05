@@ -134,6 +134,7 @@ class TweakPackages(Gtk.Overlay):
             if self.options[index].get_state() is True and \
                     self.is_installed(self.packages[index][2]) is False:
                 to_install.append(self.packages[index][2])
+        return to_install
 
     def is_installed(self, package):
         args = ['dpkg-query', '-W', '-f=\'${Status}\'', package]

@@ -137,6 +137,7 @@ mostly updated to their latest versions',
             if self.options[index].get_state() is True and \
                     self.ppas[index][2] not in installed_ppas:
                 to_install.append(self.ppas[index][2])
+        return to_install
 
     def get_installed_ppas(self):
         ppas = []
