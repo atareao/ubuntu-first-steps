@@ -230,14 +230,17 @@ class MainWindow(Gtk.ApplicationWindow):
         self.stack.set_visible_child_name(sidewidget.get_stack())
     
     def on_apply_clicked(self, *args):
-        print('clicked')
-        # self.tweakDock.set_selected()
-        # self.tweakDesktop.set_selected()
-        # self.tweakPrivacy.set_selected()
-        ppas = self.tweakRepositories.set_selected()
-        apps = self.tweakPackages.set_selected()
-        installer = Installer(ppas, apps)
-        installer.run()
+        self.tweakDock.set_selected()
+        self.tweakDesktop.set_selected()
+        self.tweakPrivacy.set_selected()
+        ppas_to_install, ppas_to_remove = self.tweakRepositories.set_selected()
+        apps_to_install, apps_to_remove = self.tweakPackages.set_selected()
+        actions = len(ppas_to_install) + len(ppas_to_remove) + \
+            len(apps_to_install) + len(apps_to_remove)
+        if actions > 0:
+            installer = Installer(ppas_to_install, ppas_to_remove,
+                                  apps_to_install, apps_to_remove)
+            installer.run()
 
     def init_headerbar(self):
         self.control = {}

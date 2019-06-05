@@ -149,6 +149,22 @@ class TweakDesktop(Gtk.Overlay):
                                 _('Show battery percentage.'),
                                 self.options[6]))
 
+        label3 = Gtk.Label(_('Experimental'))
+        label3.set_name('special')
+        label3.set_alignment(0, 0.5)
+        box.add(label3)
+
+        listbox3 = Gtk.ListBox()
+        box.add(listbox3)
+
+        self.options[7] = Gtk.Switch()
+        self.options[7].set_valign(Gtk.Align.CENTER)
+
+        listbox3.add(SettingRow(_('Enable HiDPI Fractional Scaling'),
+                                _('Enable experimenal HiDPI Fractional \
+Scaling.'),
+                                self.options[7]))
+
         self.__load_default_states()
 
     def __load_default_states(self):
@@ -187,6 +203,11 @@ class TweakDesktop(Gtk.Overlay):
 
         self.options[6].set_state(variant_to_value(
             settings.get_user_value('show-battery-percentage')) is True)
+
+        settings = Gio.Settings.new(
+            'org.gnome.mutter')
+        self.options[7].set_state(variant_to_value(
+            settings.get_user_value('experimental-features')) is not None)
 
     def set_selected(self):
         settings = Gio.Settings.new(
@@ -233,3 +254,15 @@ class TweakDesktop(Gtk.Overlay):
             settings.set_boolean('show-battery-percentage', True)
         else:
             settings.reset('show-battery-percentage')
+
+        settings = Gio.Settings.new(
+            'org.gnome.mutter')
+        if self.options[7].get_active() is True:
+            if os.environ.get('XDG_SESSION_TYPE') == 'x11':
+                settings.set_strv('experimental-features',
+                                  ['x11-randr-fractional-scaling'])
+            else:
+                settings.set_strv('experimental-features',
+                                  ['scale-monitor-framebuffer'])
+        else:
+            settings.reset('experimental-features')
