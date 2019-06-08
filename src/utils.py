@@ -20,21 +20,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import requests
 import gi
 try:
-    gi.require_version('GdkPixbuf', '2.0')
     gi.require_version('GLib', '2.0')
 except Exception as e:
     print(e)
     exit(1)
-from gi.repository import GdkPixbuf
 from gi.repository import GLib
-import base64
 import os
 import re
 import subprocess
-import io
 try:
     from . import comun
 except Exception as e:
@@ -84,109 +79,6 @@ def select_value_in_combo(combo, value):
 def get_selected_value_in_combo(combo):
     model = combo.get_model()
     return model.get_value(combo.get_active_iter(), 1)
-
-
-def download_file(url, local_filename):
-    # NOTE the stream=True parameter
-    try:
-        r = requests.get(url, stream=True)
-        with open(local_filename, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=1024):
-                if chunk:
-                    f.write(chunk)
-        return True
-    except Exception as e:
-        print(e)
-    return False
-
-
-def read_remote_file(url):
-    try:
-        r = requests.get(url, stream=True)
-        if r.status_code == 200:
-            return r.text
-    except Exception as e:
-        print(e)
-    return None
-
-
-def select_value_in_combo(combo, value):
-    model = combo.get_model()
-    for i, item in enumerate(model):
-        if value == item[1]:
-            combo.set_active(i)
-            return
-    combo.set_active(0)
-
-
-def get_selected_value_in_combo(combo):
-    model = combo.get_model()
-    return model.get_value(combo.get_active_iter(), 1)
-
-
-def get_pixbuf_from_base64string(base64string):
-    if base64string is None:
-        return NOIMAGE
-    raw_data = base64.b64decode(base64string.encode())
-    try:
-        pixbuf_loader = GdkPixbuf.PixbufLoader.new_with_mime_type("image/jpeg")
-        pixbuf_loader.write(raw_data)
-        pixbuf_loader.close()
-        pixbuf = pixbuf_loader.get_pixbuf()
-        return pixbuf
-    except Exception as e:
-        print(e)
-    try:
-        pixbuf_loader = GdkPixbuf.PixbufLoader.new_with_mime_type("image/png")
-        pixbuf_loader.write(raw_data)
-        pixbuf_loader.close()
-        pixbuf = pixbuf_loader.get_pixbuf()
-        return pixbuf
-    except Exception as e:
-        print(e)
-    return NOIMAGE
-
-
-def from_remote_image_to_base64(image_url):
-    base64string = None
-    try:
-        r = requests.get(image_url, timeout=5, verify=False)
-        if r.status_code == 200:
-            writer_file = io.BytesIO()
-            for chunk in r.iter_content(1024):
-                writer_file.write(chunk)
-            old_image = Image.open(writer_file)
-            old_image.thumbnail((128, 128), Image.ANTIALIAS)
-            new_image = io.BytesIO()
-            old_image.save(new_image, "png")
-            base64string = base64.b64encode(new_image.getvalue())
-    except Exception as e:
-        print(e)
-    if base64string is not None:
-        return base64string.decode()
-    return None
-
-
-def get_thumbnail_filename_for_audio(audio):
-    thumbnail_filename = os.path.join(comun.THUMBNAILS_DIR,
-                                      '{0}.png'.format(audio['hash']))
-    if not os.path.exists(thumbnail_filename):
-        pixbuf = get_pixbuf_from_base64string(audio['thumbnail_base64'])
-        pixbuf.savev(thumbnail_filename, 'png', [], [])
-    return thumbnail_filename
-
-
-def create_thumbnail_for_audio(hash, thumbnail_base64):
-    thumbnail_filename = os.path.join(comun.THUMBNAILS_DIR,
-                                      '{0}.png'.format(hash))
-    if not os.path.exists(thumbnail_filename):
-        if thumbnail_base64 is not None:
-            pixbuf = get_pixbuf_from_base64string(thumbnail_base64)
-        else:
-            pixbuf = NOIMAGE
-        pixbuf = pixbuf.scale_simple(256, 256, GdkPixbuf.InterpType.BILINEAR)
-        pixbuf.savev(thumbnail_filename, 'png', [], [])
-
 
 def is_running(process):
     # From http://www.bloggerpolis.com/2011/05/\
