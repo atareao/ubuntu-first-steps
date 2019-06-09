@@ -37,7 +37,7 @@ APPNAME = 'Start here'
 
 # check if running from source
 if is_package():
-    ROOTDIR = '/opt/extras.ubuntu.com/start-here/share'
+    ROOTDIR = '/usr/share'
     LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
     APPDIR = os.path.join(ROOTDIR, APP)
     CHANGELOG = os.path.join(APPDIR, 'changelog')
