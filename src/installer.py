@@ -222,9 +222,9 @@ def main(args):
         dialog.add_button(_('Ok'), Gtk.ResponseType.OK)
         dialog.run()
         return
-    if len(args) > 1:
-        installer = Installer(args[1])
-        installer.run()
+    installer = Installer(args)
+    installer.run()
+    installer.destroy()
 
 
 if __name__ == '__main__':
