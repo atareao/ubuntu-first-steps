@@ -1,8 +1,8 @@
-ubuntu-first-steps (0.0.9-20.04.02) focal; urgency=medium
+ubuntu-first-steps (0.0.9-20.04.03) focal; urgency=medium
 
   * Root in separate space
 
- -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 25 Apr 2020 19:53:07 +0200
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 25 Apr 2020 20:21:08 +0200
 
 ubuntu-first-steps (0.0.8-20.04.08) focal; urgency=medium
 
