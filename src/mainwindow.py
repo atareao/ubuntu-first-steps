@@ -67,6 +67,8 @@ else:
     additional_components = '#progressbar,\n'
 
 settings = Gio.Settings.new('org.gnome.desktop.interface')
+print(settings)
+print(str(settings.get_user_value('gtk-theme')))
 if variant_to_value(settings.get_user_value('gtk-theme')).find('dark') > -1:
     background_color = '#373737'
     forecolor = '#d7d7d7'
