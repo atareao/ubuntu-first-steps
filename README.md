@@ -19,11 +19,14 @@ Before you begin, ensure you have met the following requirements:
 * If you install it from PPA don't worry about, becouse all the requirements are included in the package
 * If you clone the repository, you need, at least, these dependecies,
 
-* gir1.2-gtk-3.0
-* gir1.2-glib-2.0
-* gir1.2-gdkpixbuf-2.0
-* gir1.2-appindicator3-0.1
-* gir1.2-keybinder-3.0
+```
+python3-gi
+gir1.2-gtk-3.0
+gir1.2-gdkpixbuf-2.0
+gir1.2-glib-2.0
+gir1.2-vte-2.91
+gir1.2-handy-0.0
+```
 
 ## Installing Ubuntu First Steps
 
