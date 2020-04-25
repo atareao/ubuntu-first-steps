@@ -140,6 +140,66 @@ def get_desktop_environment():
         return "kde"
     return "unknown"
 
+CSS = '''
+window hdycolumn box list row combobox{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#sidewidget{
+    padding: 10px;
+}
+window hdycolumn box list row{
+    background-color: $background_color;
+    padding: 2px 8px;
+    margin: 0;
+    border: 1px solid $border_color;
+    border-bottom: 0px;
+    color: $forecolor;
+}
+window hdycolumn box list row:hover{
+    background-color: $hover_color;
+}
+window hdycolumn box list row:selected{
+    background-color: $hover_color;
+}
+window hdycolumn box list row:last-child{
+    border-bottom: 1px solid $border_color;
+}
+
+window hdycolumn box list row separator {
+    background-color: $border_color;
+}
+
+#special{
+    font-size: 14px;
+    font-weight:bold;
+    color: $caption_color;
+    margin-bottom: 8px;
+}
+
+#label:hover,
+#label{
+    color: rgba(1, 1, 1, 1);
+}
+#label:selected{
+    color: rgba(0, 1, 0, 1);
+}
+#button:hover,
+#button {
+    border-image: none;
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    border-image: none;
+    border-radius: 0;
+    border-width: 0;
+    border-style: solid;
+    text-shadow: 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0);
+}
+#button:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}'''
 
 if __name__ == '__main__':
     print(get_desktop_environment())

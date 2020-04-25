@@ -48,20 +48,21 @@ class Application(Gtk.Application):
     instance = None
     IS_DEVEL = True
 
-    def __init__(self):
+    def __init__(self, theme):
         Gtk.Application.__init__(self,
                                  application_id="es.atareao.ubuntu-first-steps",
                                  flags=Gio.ApplicationFlags.FLAGS_NONE)
         GLib.set_application_name(_("ubuntu-first-steps"))
         GLib.set_prgname("ubuntu-first-steps")
         self.alive = True
+        self.theme = theme
 
         self._menu = Gio.Menu()
 
     @staticmethod
-    def get_default():
+    def get_default(theme):
         if Application.instance is None:
-            Application.instance = Application()
+            Application.instance = Application(theme)
         return Application.instance
 
     def do_startup(self):

@@ -34,17 +34,19 @@ except Exception as e:
 from gi.repository import Handy
 
 if __name__ == '__main__':
-    mdir = os.path.dirname(os.path.abspath(__file__))
-    if mdir.startswith('/usr'):
-        sys.path.insert(
-            1, '/usr/share/ubuntu-first-steps')
-    else:
-        sys.path.insert(1, os.path.normpath(os.path.join(mdir, '../src')))
-    from application import Application
-    try:
-        Handy.init(None)
-        app = Application.get_default()
-        exit_status = app.run(None)
-        sys.exit(exit_status)
-    except KeyboardInterrupt:
-        exit()
+    if len(sys.argv) > 1:
+        print(sys.argv)
+        mdir = os.path.dirname(os.path.abspath(__file__))
+        if mdir.startswith('/usr'):
+            sys.path.insert(
+                1, '/usr/share/ubuntu-first-steps')
+        else:
+            sys.path.insert(1, os.path.normpath(os.path.join(mdir, '../src')))
+        from application import Application
+        try:
+            Handy.init(None)
+            app = Application.get_default(sys.argv[1])
+            exit_status = app.run(None)
+            sys.exit(exit_status)
+        except KeyboardInterrupt:
+            exit()

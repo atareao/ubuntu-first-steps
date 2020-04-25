@@ -1,2 +1,3 @@
 #!/bin/bash
-pkexec ubuntu-first-steps-pkexec
+UTHEME=$(gsettings get org.gnome.desktop.interface gtk-theme)
+pkexec ubuntu-first-steps-pkexec $UTHEME

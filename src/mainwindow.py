@@ -47,7 +47,7 @@ import urllib
 import comun
 from comun import _
 from sidewidget import SideWidget
-from utils import get_desktop_environment, variant_to_value
+from utils import variant_to_value, CSS
 from settings import SettingRow
 from tweak_dock import TweakDock
 from tweak_desktop import TweakDesktop
@@ -57,100 +57,8 @@ from tweak_packages import TweakPackages
 from installer import Installer
 from string import Template
 
-
 DEFAULT_CURSOR = Gdk.Cursor(Gdk.CursorType.ARROW)
 WAIT_CURSOR = Gdk.Cursor(Gdk.CursorType.WATCH)
-
-if get_desktop_environment() == 'cinnamon':
-    additional_components = ''
-else:
-    additional_components = '#progressbar,\n'
-
-settings = Gio.Settings.new('org.gnome.desktop.interface')
-print(settings)
-print(str(settings.get_user_value('gtk-theme')))
-if variant_to_value(settings.get_user_value('gtk-theme')).find('dark') > -1:
-    background_color = '#373737'
-    forecolor = '#d7d7d7'
-    border_color = '#282828'
-    hover_color = '#3e3e3e'
-    caption_color = forecolor
-else:
-    background_color = '#ffffff'
-    forecolor = '#2d2d34'
-    border_color = '#c3c9d0'
-    hover_color = '#e0e0e1'
-    caption_color = '#403f38'
-
-CSS = '''
-window hdycolumn box list row combobox{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-#sidewidget{
-    padding: 10px;
-}
-window hdycolumn box list row{
-    background-color: $background_color;
-    padding: 2px 8px;
-    margin: 0;
-    border: 1px solid $border_color;
-    border-bottom: 0px;
-    color: $forecolor;
-}
-window hdycolumn box list row:hover{
-    background-color: $hover_color;
-}
-window hdycolumn box list row:selected{
-    background-color: $hover_color;
-}
-window hdycolumn box list row:last-child{
-    border-bottom: 1px solid $border_color;
-}
-
-window hdycolumn box list row separator {
-    background-color: $border_color;
-}
-
-#special{
-    font-size: 14px;
-    font-weight:bold;
-    color: $caption_color;
-    margin-bottom: 8px;
-}
-
-#label:hover,
-#label{
-    color: rgba(1, 1, 1, 1);
-}
-#label:selected{
-    color: rgba(0, 1, 0, 1);
-}
-$additional_components
-#button:hover,
-#button {
-    border-image: none;
-    background-image: none;
-    background-color: rgba(0, 0, 0, 0);
-    border-color: rgba(0, 0, 0, 0);
-    border-image: none;
-    border-radius: 0;
-    border-width: 0;
-    border-style: solid;
-    text-shadow: 0 0 rgba(0, 0, 0, 0);
-    box-shadow: 0 0 rgba(0, 0, 0, 0), 0 0 rgba(0, 0, 0, 0);
-}
-#button:hover{
-    background-color: rgba(0, 0, 0, 0.1);
-}'''
-#CSS = CSS.format(background_color=background_color)
-CSS = Template(CSS)
-CSS = CSS.substitute(background_color=background_color,
-                     border_color=border_color,
-                     forecolor=forecolor,
-                     additional_components=additional_components,
-                     hover_color=hover_color,
-                     caption_color=caption_color)
 
 
 class MainWindow(Gtk.ApplicationWindow):
@@ -347,8 +255,31 @@ class MainWindow(Gtk.ApplicationWindow):
                 widget.set_active(True)
 
     def load_css(self):
+        settings = Gio.Settings.new('org.gnome.desktop.interface')
+        print(settings)
+        print(str(settings.get_user_value('gtk-theme')))
+        if variant_to_value(settings.get_user_value('gtk-theme')).find('dark') > -1:
+            background_color = '#373737'
+            forecolor = '#d7d7d7'
+            border_color = '#282828'
+            hover_color = '#3e3e3e'
+            caption_color = forecolor
+        else:
+            background_color = '#ffffff'
+            forecolor = '#2d2d34'
+            border_color = '#c3c9d0'
+            hover_color = '#e0e0e1'
+            caption_color = '#403f38'
+
+        css = Template(CSS).substitute(background_color=background_color,
+                             border_color=border_color,
+                             forecolor=forecolor,
+                             hover_color=hover_color,
+                             caption_color=caption_color)
+        css = str(css).encode()
+
         style_provider = Gtk.CssProvider()
-        style_provider.load_from_data(str(CSS).encode())
+        style_provider.load_from_data(css)
         Gtk.StyleContext.add_provider_for_screen(
             Gdk.Screen.get_default(),
             style_provider,
