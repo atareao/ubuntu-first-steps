@@ -42,47 +42,31 @@ sudo apt install ubuntu-first-steps
 
 ## Using Ubuntu First Steps
 
-When you start **Ubuntu First Steps** it goes to Indicator Area, as you can see in the next screenshot,
+**Ubuntu First Steps** has 5 main sections to custom the Ubuntu User Experience
 
-![ubuntu-first-steps](./screenshots/screenshot_01.png)
+* Custom dock
 
-In this screenshot, the language is Spanish, but, if there is no translation for your language, you will find the app in English.
+![Custom dock](./screenshots/ubuntu-first-steps-screenshot-1.png)
 
-You can set some options in order to start *Ubuntu First Steps* when you start your Operative System.
+* Custom desktop
 
-* Set the icon theme. Dark or light.
-* Start Ubuntu First Steps with your Operative System
-* Set the number of tasks you want to show in the indicator menu
-* Set the tasks files. The file must follow the Todo.txt syntax.
+![Custom desktop](./screenshots/ubuntu-first-steps-screenshot-2.png)
 
-![Example 2](./screenshots/screenshot_06.png)
+* Privacy
 
-You can add so many projects as you need in the configuration dialog, as you can see in the next screenshot.
+![Privacy](./screenshots/ubuntu-first-steps-screenshot-3.png)
 
-![Example 2](./screenshots/screenshot_07.png)
+* Repositories
 
-Same, for contexts.
+![Repositorios](./screenshots/ubuntu-first-steps-screenshot-4.png)
 
-![Example 2](./screenshots/screenshot_08.png)
+* Applications
 
-You can add optional tags. Every tag can be or a string or a date. So you can add a *due* tag to set the date when the task must be completed or an *id* to save an special
+![Applications](./screenshots/ubuntu-first-steps-screenshot-5.png)
 
+### About this application
 
-![Example 2](./screenshots/screenshot_09.png)
-
-Besides you can set the colors of the graphics
-
-![Configuration](./screenshots/screenshot_02.png)
-
-In the next screenshot you can see the about
-
-![About](./screenshots/screenshot_03.png)
-
-In the next screenshots you can see some samples of my use of **Ubuntu First Steps**,
-
-![Example 1](./screenshots/screenshot_04.png)
-
-![Example 2](./screenshots/screenshot_05.png)
+![About this app](./screenshots/ubuntu-first-steps-screenshot-6.png)
 
 ## Contributing to Ubuntu First Steps
 
