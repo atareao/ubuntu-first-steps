@@ -34,9 +34,11 @@ except Exception as e:
 from gi.repository import Gtk
 from gi.repository import GLib
 from gi.repository import Vte
+import os
 import sys
 import time
 import comun
+import json
 from comun import _
 from doitinbackground import DoItInBackground
 import utils
@@ -64,21 +66,22 @@ class SmartTerminal(Vte.Terminal):
 
 
 class Installer(Gtk.Dialog):  # needs GTK, Python, Webkit-GTK
-    def __init__(self, ppas_to_install, ppas_to_remove, apps_to_install,
-                 apps_to_remove):
-        Gtk.Dialog.__init__(self,
-                            _('Add ppa repository'),
-                            None,
-                            Gtk.DialogFlags.MODAL |
-                            Gtk.DialogFlags.DESTROY_WITH_PARENT)
+    # def __init__(self, ppas_to_install, ppas_to_remove, apps_to_install,
+    #              apps_to_remove):
+    def __init__(self, actions):
+        Gtk.Dialog.__init__(self)
+        self.set_title( _('Add ppa repository'))
+        self.set_modal(True)
+        self.set_destroy_with_parent(True)
         self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
         self.set_icon_from_file(comun.ICON)
         self.set_size_request(600, 50)
 
-        self.ppas_to_install = ppas_to_install
-        self.ppas_to_remove = ppas_to_remove
-        self.apps_to_install = apps_to_install
-        self.apps_to_remove = apps_to_remove
+        actions = json.loads(actions)
+        self.ppas_to_install = actions['ppas_to_install']
+        self.ppas_to_remove = actions['ppas_to_remove']
+        self.apps_to_install = actions['apps_to_install']
+        self.apps_to_remove = actions['apps_to_remove']
 
         box = Gtk.Box.new(Gtk.Orientation.HORIZONTAL, 10)
         box.set_border_width(5)
@@ -137,9 +140,10 @@ class Installer(Gtk.Dialog):  # needs GTK, Python, Webkit-GTK
         else:
             kind = Gtk.MessageType.ERROR
             message = _('Installation NOT completed!')
-        dialog = Gtk.MessageDialog(self, 0, kind,
-                                   Gtk.ButtonsType.OK,
-                                   message)
+        dialog = Gtk.MessageDialog()
+        dialog.set_markup(message)
+        dialog.set_property('message_type', kind)
+        dialog.add_button(_('Ok'), Gtk.ButtonsType.OK)
         dialog.run()
         dialog.destroy()
 
@@ -176,19 +180,16 @@ class Installer(Gtk.Dialog):  # needs GTK, Python, Webkit-GTK
 
     def on_button_cancel_clicked(self, button):
         if self.is_installing:
-            '''
-            dialog = Gtk.MessageDialog(
-                self, 0, Gtk.MessageType.INFO, Gtk.ButtonsType.YES_NO,
-                _('Do you want to stop the installation?'))
-            '''
-            dialog = Gtk.MessageDialog.new()
+            dialog = Gtk.MessageDialog()
             dialog.set_markup(_('Do you want to stop the installation?'))
             dialog.set_property('message-type', Gtk.MessageType.INFO)
-            if dialog.run() == Gtk.ResponseType.YES:
+            dialog.add_button(_('Ok'), Gtk.ResponseType.OK)
+            dialog.add_button(_('Cancel'), Gtk.ResponseType.CANCEL)
+            ans = dialog.run()
+            if dialog.run() == Gtk.ResponseType.OK:
+                GLib.idle_add(dialog.hide)
                 self.terminal.stop()
-            dialog.destroy()
-        else:
-            self.destroy()
+            GLib.idle_add(dialog.destroy)
 
     def show_info(self):
         self.progressbar.set_visible(True)
@@ -214,14 +215,23 @@ class Installer(Gtk.Dialog):  # needs GTK, Python, Webkit-GTK
 
 
 def main(args):
-    print(args)
-    if len(args) < 2:
-        args.append('ppa:atareao/atareao?my-weather-indicator,\
-pomodoro-indicator, utext')
-    PPAUrlDialog(args)
-    Gtk.main()
+    if os.geteuid() != 0:
+        dialog = Gtk.MessageDialog()
+        dialog.set_markup(_('You must be root to run this tool'))
+        dialog.set_property('message-type', Gtk.MessageType.ERROR)
+        dialog.add_button(_('Ok'), Gtk.ResponseType.OK)
+        dialog.run()
+        return
+    if len(args) > 1:
+        installer = Installer(args[1])
+        installer.run()
 
 
 if __name__ == '__main__':
-    main(sys.argv)
+    actions = {'ppas_to_install': ['ppa:atareao/atareao'],
+               'ppas_to_remove': [],
+               'apps_to_install': ['my-weather-indicator'],
+               'apps_to_remove': []
+    }
+    main(actions)
     exit(0)

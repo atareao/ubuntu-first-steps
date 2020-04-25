@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 #
 # This file is part of ubuntu-first-steps
@@ -42,6 +42,7 @@ from gi.repository import GObject
 from gi.repository import Handy
 import os
 import json
+import subprocess
 import mimetypes
 import urllib
 import comun
@@ -173,9 +174,13 @@ class MainWindow(Gtk.ApplicationWindow):
         actions = len(ppas_to_install) + len(ppas_to_remove) + \
             len(apps_to_install) + len(apps_to_remove)
         if actions > 0:
-            installer = Installer(ppas_to_install, ppas_to_remove,
-                                  apps_to_install, apps_to_remove)
-            installer.run()
+            actions = {'ppas_to_install': ppas_to_install,
+                       'ppas_to_remove': ppas_to_remove,
+                       'apps_to_install': apps_to_install,
+                       'apps_to_remove': apps_to_remove
+            }
+            process = subprocess.run(['ubuntu-first-steps-installer',
+                                      json.dumps(actions)])
             self.tweakRepositories.update()
             self.tweakPackages.update()
             installer.destroy()
@@ -256,9 +261,8 @@ class MainWindow(Gtk.ApplicationWindow):
 
     def load_css(self):
         settings = Gio.Settings.new('org.gnome.desktop.interface')
-        print(settings)
-        print(str(settings.get_user_value('gtk-theme')))
-        if variant_to_value(settings.get_user_value('gtk-theme')).find('dark') > -1:
+        theme = variant_to_value(settings.get_user_value('gtk-theme'))
+        if theme.find('dark') > -1:
             background_color = '#373737'
             forecolor = '#d7d7d7'
             border_color = '#282828'

@@ -44,7 +44,7 @@ if is_package():
     LANGDIR = os.path.join(ROOTDIR, 'locale-langpack')
     APPDIR = os.path.join(ROOTDIR, APP)
     CHANGELOG = os.path.join(APPDIR, 'changelog')
-    ICONDIR = os.path.join(ROOTDIR, 'icons')
+    ICONDIR = os.path.join(ROOTDIR, 'icons', 'hicolor', 'scalable', 'apps')
     ICON = os.path.join(ICONDIR, 'ubuntu-first-steps.svg')
 else:
     ROOTDIR = os.path.dirname(__file__)
@@ -69,7 +69,6 @@ try:
     current_locale, encoding = locale.getdefaultlocale()
     language = gettext.translation(APP, LANGDIR, [current_locale])
     language.install()
-    print(language)
     if sys.version_info[0] == 3:
         _ = language.gettext
     else:
