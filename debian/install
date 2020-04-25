@@ -1,7 +1,6 @@
-bin/ubuntu-first-steps /usr/bin
-bin/ubuntu-first-steps-pkexec /usr/bin
+bin/* /usr/bin
 src/*.py /usr/share/ubuntu-first-steps
 debian/changelog /usr/share/ubuntu-first-steps
-policykit/actions/com.ubuntu.pkexec.ubuntu-first-steps.policy /usr/share/polkit-1/actions/
+policykit/actions/com.ubuntu.pkexec.ubuntu-first-steps.policy /usr/share/polkit-1/actions
 data/ubuntu-first-steps.desktop /usr/share/applications
-data/icons /usr/share/icons/hicolor
+data/icons/* /usr/share/icons/hicolor
