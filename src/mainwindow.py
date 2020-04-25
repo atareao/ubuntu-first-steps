@@ -55,7 +55,6 @@ from tweak_desktop import TweakDesktop
 from tweak_privacy import TweakPrivacy
 from tweak_repositories import TweakRepositories
 from tweak_packages import TweakPackages
-from installer import Installer
 from string import Template
 
 DEFAULT_CURSOR = Gdk.Cursor(Gdk.CursorType.ARROW)
@@ -179,11 +178,11 @@ class MainWindow(Gtk.ApplicationWindow):
                        'apps_to_install': apps_to_install,
                        'apps_to_remove': apps_to_remove
             }
-            process = subprocess.run(['ubuntu-first-steps-installer',
+            process = subprocess.run(['sudo',
+                                      'ubuntu-first-steps-installer',
                                       json.dumps(actions)])
             self.tweakRepositories.update()
             self.tweakPackages.update()
-            installer.destroy()
 
     def init_headerbar(self):
         self.control = {}
