@@ -1,8 +1,7 @@
-bin/start-here /usr/bin
-bin/start-here-pkexec /usr/bin
-src/*.py /usr/share/start-here
-debian/changelog /usr/share/start-here
-data/start-here.desktop /usr/share/applications
-data/icons/start-here.svg /usr/share/icons
-data/icons/start-here.svg /usr/share/icons
-policykit/actions/com.ubuntu.pkexec.start-here.policy /usr/share/polkit-1/actions/
+bin/ubuntu-first-steps /usr/bin
+bin/ubuntu-first-steps-pkexec /usr/bin
+src/*.py /usr/share/ubuntu-first-steps
+debian/changelog /usr/share/ubuntu-first-steps
+policykit/actions/com.ubuntu.pkexec.ubuntu-first-steps.policy /usr/share/polkit-1/actions/
+data/ubuntu-first-steps.desktop /usr/share/applications
+data/icons /usr/share/icons/hicolor

@@ -1,11 +1,17 @@
-start-here (0.0.6-19.04ubuntu333) disco; urgency=medium
+ubuntu-first-steps (0.0.7-20.04.01) focal; urgency=medium
+
+  * Change name to Ubuntu First Steps 
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 25 Apr 2020 08:44:38 +0200
+
+ubuntu-first-steps (0.0.6-19.04ubuntu333) disco; urgency=medium
 
   * Added spanish translation
   * Changed launcher
 
  -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 09 Jun 2019 10:33:59 +0200
 
-start-here (0.0.5-19.04ubuntu0) disco; urgency=medium
+ubuntu-first-steps (0.0.5-19.04ubuntu0) disco; urgency=medium
 
   * First release
 

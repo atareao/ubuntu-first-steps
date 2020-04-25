@@ -1,24 +1,27 @@
-#!/usr/bin/env python3
+#/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 #
-# start-here is an application that helps you to tweak Ubuntu,
-# after install a new version of Ubuntu. First stepts with Ubuntu.
+# This file is part of ubuntu-first-steps
 #
-# Copyright © 2019  Lorenzo Carbonell (aka atareao)
-# <lorenzo.carbonell.cerezo at gmail dotcom>
+# Copyright (c) 2020 Lorenzo Carbonell Cerezo <a.k.a. atareao>
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
 #
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE
 
 import os
 import sys
@@ -32,8 +35,8 @@ def is_package():
 ######################################
 
 
-APP = 'start-here'
-APPNAME = 'Start here'
+APP = 'ubuntu-first-steps'
+APPNAME = 'Ubuntu First Steps'
 
 # check if running from source
 if is_package():
@@ -42,14 +45,14 @@ if is_package():
     APPDIR = os.path.join(ROOTDIR, APP)
     CHANGELOG = os.path.join(APPDIR, 'changelog')
     ICONDIR = os.path.join(ROOTDIR, 'icons')
-    ICON = os.path.join(ICONDIR, 'start-here.svg')
+    ICON = os.path.join(ICONDIR, 'ubuntu-first-steps.svg')
 else:
     ROOTDIR = os.path.dirname(__file__)
     LANGDIR = os.path.normpath(os.path.join(ROOTDIR, '../template1'))
     APPDIR = ROOTDIR
     DEBIANDIR = os.path.normpath(os.path.join(ROOTDIR, '../debian'))
     CHANGELOG = os.path.join(DEBIANDIR, 'changelog')
-    ICON = os.path.normpath(os.path.join(ROOTDIR, '../data/icons/start-here.svg'))
+    ICON = os.path.normpath(os.path.join(ROOTDIR, '../data/icons/ubuntu-first-steps.svg'))
 
 
 f = open(CHANGELOG, 'r')

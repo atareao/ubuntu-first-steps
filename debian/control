@@ -1,4 +1,4 @@
-Source: start-here
+Source: ubuntu-first-steps
 Section: utils
 Priority: extra
 Maintainer: Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
@@ -6,15 +6,15 @@ Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.4
 Homepage: http://www.atareao.es
 
-Package: start-here
+Package: ubuntu-first-steps
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends},
     python3-gi,
     gir1.2-gtk-3.0,
     gir1.2-gdkpixbuf-2.0,
     gir1.2-glib-2.0,
-	gir1.2-vte-2.91,
+    gir1.2-vte-2.91,
     gir1.2-handy-0.0
-Description: start-here helps you tweak Ubuntu
- start-here is a program that helps you to tweak Ubuntu,
+Description: ubuntu-first-steps helps you tweak Ubuntu
+ ubuntu-first-steps is a program that helps you to tweak Ubuntu,
  after install a new version of Ubuntu.

@@ -1,28 +1,27 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 #
-# start-here is an application that helps you to tweak Ubuntu,
-# after install a new version of Ubuntu. First stepts with Ubuntu.
+# This file is part of ubuntu-first-steps
 #
-# Copyright © 2019  Lorenzo Carbonell (aka atareao)
-# <lorenzo.carbonell.cerezo at gmail dotcom>
+# Copyright (c) 2020 Lorenzo Carbonell Cerezo <a.k.a. atareao>
 #
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
 #
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
 #
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-import gi
-try:
-    gi.require_version('Gtk', '3.0')
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE
     gi.require_version('Gio', '2.0')
     gi.require_version('GLib', '2.0')
     gi.require_version('GdkPixbuf', '2.0')
@@ -41,16 +40,16 @@ import webbrowser
 
 
 class Application(Gtk.Application):
-    """start-here application object."""
+    """ubuntu-first-steps application object."""
     instance = None
     IS_DEVEL = True
 
     def __init__(self):
         Gtk.Application.__init__(self,
-                                 application_id="es.atareao.start-here",
+                                 application_id="es.atareao.ubuntu-first-steps",
                                  flags=Gio.ApplicationFlags.FLAGS_NONE)
-        GLib.set_application_name(_("start-here"))
-        GLib.set_prgname("start-here")
+        GLib.set_application_name(_("ubuntu-first-steps"))
+        GLib.set_prgname("ubuntu-first-steps")
         self.alive = True
 
         self._menu = Gio.Menu()
@@ -82,15 +81,15 @@ class Application(Gtk.Application):
         self.__add_action(
             'goto_code',
             callback=lambda x, y: webbrowser.open(
-                'https://github.com/atareao/start-here'))
+                'https://github.com/atareao/ubuntu-first-steps'))
         self.__add_action(
             'goto_bug',
             callback=lambda x, y: webbrowser.open(
-                'https://github.com/atareao/start-here/issues'))
+                'https://github.com/atareao/ubuntu-first-steps/issues'))
         self.__add_action(
             'goto_sugestion',
             callback=lambda x, y: webbrowser.open(
-                'https://github.com/atareao/start-here/issues'))
+                'https://github.com/atareao/ubuntu-first-steps/issues'))
         self.__add_action(
             'goto_donate',
             callback=lambda x, y: webbrowser.open(
