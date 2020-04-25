@@ -6,7 +6,7 @@
 
 [![Twitter: atareao](https://img.shields.io/twitter/follow/atareao.svg?style=social)](https://twitter.com/atareao)
 
-<img src="./data/icons/ubuntu-first-steps.svg" align="right"
+<img src="./data/icons/scalable/apps/ubuntu-first-steps.svg" align="right"
      title="start-here Logo" width="128" height="128">
 
 
