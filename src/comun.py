@@ -52,7 +52,7 @@ else:
     APPDIR = ROOTDIR
     DEBIANDIR = os.path.normpath(os.path.join(ROOTDIR, '../debian'))
     CHANGELOG = os.path.join(DEBIANDIR, 'changelog')
-    ICON = os.path.normpath(os.path.join(ROOTDIR, '../data/icons/ubuntu-first-steps.svg'))
+    ICON = os.path.normpath(os.path.join(ROOTDIR, '../data/icons/scalable/apps/ubuntu-first-steps.svg'))
 
 
 f = open(CHANGELOG, 'r')

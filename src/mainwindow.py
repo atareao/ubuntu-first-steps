@@ -47,7 +47,7 @@ import urllib
 import comun
 from comun import _
 from sidewidget import SideWidget
-from utils import get_desktop_environment
+from utils import get_desktop_environment, variant_to_value
 from settings import SettingRow
 from tweak_dock import TweakDock
 from tweak_desktop import TweakDesktop
@@ -55,6 +55,7 @@ from tweak_privacy import TweakPrivacy
 from tweak_repositories import TweakRepositories
 from tweak_packages import TweakPackages
 from installer import Installer
+from string import Template
 
 
 DEFAULT_CURSOR = Gdk.Cursor(Gdk.CursorType.ARROW)
@@ -64,6 +65,19 @@ if get_desktop_environment() == 'cinnamon':
     additional_components = ''
 else:
     additional_components = '#progressbar,\n'
+
+settings = Gio.Settings.new('org.gnome.desktop.interface')
+if variant_to_value(settings.get_user_value('gtk-theme')).find('dark') > -1:
+    background_color = '#373737'
+    forecolor = '#d7d7d7'
+    border_color = '#282828'
+    hover_color = '#3e3e3e'
+else:
+    background_color = '#ffffff'
+    forecolor = '#2d2d34'
+    border_color = '#c3c9d0'
+    hover_color = '#e0e0e1'
+
 CSS = '''
 window hdycolumn box list row combobox{
     padding-top: 10px;
@@ -73,25 +87,25 @@ window hdycolumn box list row combobox{
     padding: 10px;
 }
 window hdycolumn box list row{
-    background-color: #ffffff;
+    background-color: $background_color;
     padding: 2px 8px;
     margin: 0;
-    border: 1px solid #c3c9d0;
+    border: 1px solid $border_color;
     border-bottom: 0px;
-    color: #2d2d34;
+    color: $forecolor;
 }
 window hdycolumn box list row:hover{
-    background-color: #e0e0e1;
+    background-color: $hover_color;
 }
 window hdycolumn box list row:selected{
-    background-color: #e0e0e1;
+    background-color: $hover_color;
 }
 window hdycolumn box list row:last-child{
-    border-bottom: 1px solid #c3c9d0;
+    border-bottom: 1px solid $border_color;
 }
 
 window hdycolumn box list row separator {
-    background-color: #c3c9d0;
+    background-color: $border_color;
 }
 
 #special{
@@ -108,7 +122,7 @@ window hdycolumn box list row separator {
 #label:selected{
     color: rgba(0, 1, 0, 1);
 }
-%s
+$additional_components
 #button:hover,
 #button {
     border-image: none;
@@ -124,7 +138,14 @@ window hdycolumn box list row separator {
 }
 #button:hover{
     background-color: rgba(0, 0, 0, 0.1);
-}''' % (additional_components)
+}'''
+#CSS = CSS.format(background_color=background_color)
+CSS = Template(CSS)
+CSS = CSS.substitute(background_color=background_color,
+                     border_color=border_color,
+                     forecolor=forecolor,
+                     additional_components=additional_components,
+                     hover_color=hover_color)
 
 
 class MainWindow(Gtk.ApplicationWindow):
@@ -249,7 +270,7 @@ class MainWindow(Gtk.ApplicationWindow):
     def init_headerbar(self):
         self.control = {}
         self.menu_selected = 'suscriptions'
-        #
+
         hb = Gtk.HeaderBar()
         hb.set_show_close_button(True)
         hb.props.title = comun.APPNAME
@@ -322,7 +343,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
     def load_css(self):
         style_provider = Gtk.CssProvider()
-        style_provider.load_from_data(CSS.encode())
+        style_provider.load_from_data(str(CSS).encode())
         Gtk.StyleContext.add_provider_for_screen(
             Gdk.Screen.get_default(),
             style_provider,

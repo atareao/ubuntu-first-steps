@@ -48,11 +48,11 @@ class SideWidget(Gtk.ListBoxRow):
         self.add(box)
 
         self.image = Gtk.Image.new_from_icon_name(iconname, Gtk.IconSize.BUTTON)
-        box.pack_start(self.image, True, True, 0)
+        box.pack_start(self.image, False, False, 0)
 
         self.label = Gtk.Label(text)
-        self.label.set_alignment(0, 0.5)
-        box.pack_start(self.label, True, True, 5)
+        self.label.set_halign(Gtk.Align.START)
+        box.pack_start(self.label, False, False, 5)
 
         self.stack = None
 
