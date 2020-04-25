@@ -72,11 +72,13 @@ if variant_to_value(settings.get_user_value('gtk-theme')).find('dark') > -1:
     forecolor = '#d7d7d7'
     border_color = '#282828'
     hover_color = '#3e3e3e'
+    caption_color = forecolor
 else:
     background_color = '#ffffff'
     forecolor = '#2d2d34'
     border_color = '#c3c9d0'
     hover_color = '#e0e0e1'
+    caption_color = '#403f38'
 
 CSS = '''
 window hdycolumn box list row combobox{
@@ -111,7 +113,7 @@ window hdycolumn box list row separator {
 #special{
     font-size: 14px;
     font-weight:bold;
-    color: #403f38;
+    color: $caption_color;
     margin-bottom: 8px;
 }
 
@@ -145,7 +147,8 @@ CSS = CSS.substitute(background_color=background_color,
                      border_color=border_color,
                      forecolor=forecolor,
                      additional_components=additional_components,
-                     hover_color=hover_color)
+                     hover_color=hover_color,
+                     caption_color=caption_color)
 
 
 class MainWindow(Gtk.ApplicationWindow):
