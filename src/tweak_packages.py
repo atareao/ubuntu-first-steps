@@ -95,6 +95,9 @@ animation, rendering, post-production, interactive creation and playback (games)
         self.packages[11] = ['Sushi',
                              'Preview tool for the GNOME Shell desktop',
                              'gnome-sushi']
+        self.packages[12] = ['Weather',
+                             'The weather in your desktop via GNOME',
+                             'gnome-weather']
 
     def __set_ui(self):
         handycolumn = Handy.Column()
