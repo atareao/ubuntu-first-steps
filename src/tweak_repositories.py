@@ -68,7 +68,7 @@ system',
         self.ppas[2] = ['WebUpd8',
                         'PPA containing a lot of useful applications that are \
 mostly updated to their latest versions',
-                        'ppa:nilarimogard/webupd8']
+                        'nilarimogard/webupd8']
         self.ppas[3] = ['FreeCAD',
                         'Latest stable release of FreeCAD',
                         'freecad-maintainers/freecad-stable']
@@ -92,7 +92,7 @@ mostly updated to their latest versions',
                         'thomas-schiex/blender']
         self.ppas[10] = ['Audacity',
                          'Unofficial. Most recent relase version of Audacity',
-                         'ubuntuhandbook1/audacity']
+                         'buntuhandbook1/audacity']
 
     def __set_ui(self):
         handycolumn = Handy.Column()

@@ -147,7 +147,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.load_css()
 
-        self.set_default_size(800, 700)
+        self.set_default_size(800, 800)
         monitor = Gdk.Display.get_primary_monitor(Gdk.Display.get_default())
         scale = monitor.get_scale_factor()
         width = monitor.get_geometry().width / scale

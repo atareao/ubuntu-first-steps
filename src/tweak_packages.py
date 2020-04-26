@@ -74,7 +74,8 @@ class TweakPackages(Gtk.Overlay):
                             '',
                             'gimp-gmic']
         self.packages[5] = ['Blender',
-                            'Blender is an integrated 3d suite for modelling, animation, rendering, post-production, interactive creation and playback (games)',
+                            'Blender is an integrated 3d suite for modelling, \
+animation, rendering, post-production, interactive creation and playback (games)',
                             'blender']
         self.packages[6] = ['gufw',
                             'gufw is an easy and intuitive way to manage your Linux firewall.',
@@ -91,6 +92,9 @@ class TweakPackages(Gtk.Overlay):
         self.packages[10] = ['Flameshot',
                              'Powerful and simple to use screenshot software',
                              'flameshot']
+        self.packages[11] = ['Sushi',
+                             'Preview tool for the GNOME Shell desktop',
+                             'gnome-sushi']
 
     def __set_ui(self):
         handycolumn = Handy.Column()

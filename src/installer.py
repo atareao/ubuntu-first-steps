@@ -198,9 +198,9 @@ class Installer(Gtk.Dialog):  # needs GTK, Python, Webkit-GTK
     def start_installation(self):
         commands = []
         for ppa in self.ppas_to_install:
-            commands.append('add-apt-repository -y {}'.format(ppa))
+            commands.append('add-apt-repository -y ppa:{}'.format(ppa))
         for ppa in self.ppas_to_remove:
-            commands.append('add-apt-repository -y -r {}'.format(ppa))
+            commands.append('add-apt-repository -y -r ppa:{}'.format(ppa))
         if len(commands) > 0:
             commands.append('apt-get update')
             commands.append('apt-get upgrade')
@@ -225,6 +225,7 @@ def main(args):
     installer = Installer(args)
     installer.run()
     installer.destroy()
+    exit(0)
 
 
 if __name__ == '__main__':
