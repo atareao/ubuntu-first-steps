@@ -146,15 +146,18 @@ class MainWindow(Gtk.ApplicationWindow):
         self.get_root_window().set_cursor(DEFAULT_CURSOR)
 
         self.load_css()
+        self.set_size_request(800, 900)
+        self.connect('realize', self.on_realize)
+        self.show_all()
 
-        self.set_default_size(800, 800)
+    def on_realize(self, *_):
         monitor = Gdk.Display.get_primary_monitor(Gdk.Display.get_default())
         scale = monitor.get_scale_factor()
-        width = monitor.get_geometry().width / scale
-        height = monitor.get_geometry().height / scale
-        self.move((width - 500)/2, (height - 600)/2)
-
-        self.show_all()
+        monitor_width = monitor.get_geometry().width / scale
+        monitor_height = monitor.get_geometry().height / scale
+        width = self.get_preferred_width()[0]
+        height = self.get_preferred_height()[0]
+        self.move((monitor_width - width)/2, (monitor_height - height)/2)
 
     def on_row_activated(self, lb, sidewidget):
         self.stack.set_visible_child_name(sidewidget.get_stack())
@@ -178,9 +181,10 @@ class MainWindow(Gtk.ApplicationWindow):
                        'apps_to_install': apps_to_install,
                        'apps_to_remove': apps_to_remove
             }
-            process = subprocess.run(['sudo',
-                                      'ubuntu-first-steps-installer',
-                                      json.dumps(actions)])
+            process = subprocess.Popen(['pkexec',
+                                        'ubuntu-first-steps-installer',
+                                        json.dumps(actions)])
+            outs, errs = process.communicate()
             self.tweakRepositories.update()
             self.tweakPackages.update()
 

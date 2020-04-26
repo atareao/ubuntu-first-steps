@@ -146,6 +146,7 @@ class Installer(Gtk.Dialog):  # needs GTK, Python, Webkit-GTK
         dialog.add_button(_('Ok'), Gtk.ButtonsType.OK)
         dialog.run()
         dialog.destroy()
+        self.destroy()
 
     def stopped(self, anobject, *args):
         self.is_installing = False
