@@ -98,6 +98,15 @@ animation, rendering, post-production, interactive creation and playback (games)
         self.packages[12] = ['Weather',
                              'The weather in your desktop via GNOME',
                              'gnome-weather']
+        self.packages[13] = ['Geary',
+                             'Geary is an open-source e-mail client for the Linux desktop',
+                             'geary']
+        self.packages[14] = ['Caffeine',
+                             'Lock Screen Inhibitor',
+                             'caffeine']
+        self.packages[15] = ['Corebird',
+                             'The Twitter application for the Linux Desktop',
+                             'corebird']
 
     def __set_ui(self):
         handycolumn = Handy.Column()

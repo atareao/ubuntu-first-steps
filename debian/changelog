@@ -1,11 +1,11 @@
-ubuntu-first-steps (0.1.0-20.04.01) focal; urgency=medium
+ubuntu-first-steps (0.1.0-20.04.022) focal; urgency=medium
 
   * Center main window
   * Using pkexec
   * Close installer window after install 
   * Add gnome-weather to packages to install
 
- -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 26 Apr 2020 09:24:48 +0200
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 26 Apr 2020 09:55:14 +0200
 
 ubuntu-first-steps (0.0.9-20.04.06) focal; urgency=medium
 
