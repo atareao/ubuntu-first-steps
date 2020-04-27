@@ -265,7 +265,7 @@ class MainWindow(Gtk.ApplicationWindow):
     def load_css(self):
         settings = Gio.Settings.new('org.gnome.desktop.interface')
         theme = variant_to_value(settings.get_user_value('gtk-theme'))
-        if theme.find('dark') > -1:
+        if theme and theme.find('dark') > -1:
             background_color = '#373737'
             forecolor = '#d7d7d7'
             border_color = '#282828'
