@@ -73,7 +73,7 @@ class Application(Gtk.Application):
         self.__add_action(
                 'goto_homepage',
                 callback=lambda x, y: webbrowser.open(
-                    'http://www.atareao.es/'))
+                    'https://www.atareao.es/aplicacion/ubuntu-first-steps/'))
         self.__add_action(
             'goto_twitter',
             callback=lambda x, y: webbrowser.open(
