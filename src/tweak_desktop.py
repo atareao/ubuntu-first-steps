@@ -171,7 +171,7 @@ Scaling.'),
         if icon_size is None:
             select_value_in_combo(self.options['icon-size'], 'small')
         else:
-            select_value_in_combo(self.options['icon-size'], dock_position)
+            select_value_in_combo(self.options['icon-size'], icon_size)
 
         self.options[0].set_state(variant_to_value(
             settings.get_user_value('show-home')) is False)
