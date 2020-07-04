@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 #
 # This file is part of ubuntu-first-steps
@@ -34,17 +34,10 @@ except Exception as e:
 from gi.repository import Gtk
 from gi.repository import Gio
 from gi.repository import Handy
-import os
-import json
-import mimetypes
-import urllib
-import comun
 from comun import _
-from sidewidget import SideWidget
-from utils import get_desktop_environment
 from settings import SettingRow
-from utils import variant_to_value, select_value_in_combo
-from utils import get_selected_value_in_combo
+from utils import variant_to_value
+from utils import is_installed
 
 
 class TweakPrivacy(Gtk.Overlay):
@@ -136,7 +129,7 @@ class TweakPrivacy(Gtk.Overlay):
         listbox3 = Gtk.ListBox()
         box.add(listbox3)
 
-        for index in range(8, 10):
+        for index in range(8, 11):
             self.options[index] = Gtk.Switch()
             self.options[index].set_valign(Gtk.Align.CENTER)
 
@@ -147,6 +140,10 @@ class TweakPrivacy(Gtk.Overlay):
         listbox3.add(SettingRow(_('Send software usage'),
                                 _('Send softwarew usage statistics.'),
                                 self.options[9]))
+
+        listbox3.add(SettingRow(_('Ubuntu popularity contest'),
+                                _('Send information about installed packages'),
+                                self.options[10]))
 
         self.__load_default_states()
 
@@ -176,6 +173,7 @@ class TweakPrivacy(Gtk.Overlay):
             settings.get_user_value('report-technical-problems')) is True)
         self.options[9].set_state(variant_to_value(
             settings.get_user_value('send-software-usage-stats')) is True)
+        self.options[10].set_state(is_installed('popularity-contest'))
 
     def set_selected(self):
         settings = Gio.Settings.new(
@@ -220,3 +218,14 @@ class TweakPrivacy(Gtk.Overlay):
             settings.set_boolean('send-software-usage-stats', True)
         else:
             settings.reset('send-software-usage-stats')
+
+    def set_selected_packages(self):
+        to_install = []
+        to_remove = []
+        if self.options[10].get_state is True:
+            if is_installed('popularity-contest') is False:
+                to_install.append('popularity-contest')
+        else:
+            if is_installed('popularity_contest') is True:
+                to_remove.append('popularity-contest')
+        return to_install, to_remove

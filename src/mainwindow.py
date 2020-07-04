@@ -63,9 +63,9 @@ WAIT_CURSOR = Gdk.Cursor(Gdk.CursorType.WATCH)
 
 class MainWindow(Gtk.ApplicationWindow):
     __gsignals__ = {
-        'text-changed': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
+        'text-changed': (GObject.SignalFlags.RUN_FIRST, GObject.TYPE_NONE,
                          (object,)),
-        'save-me': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
+        'save-me': (GObject.SignalFlags.RUN_FIRST, GObject.TYPE_NONE,
                     (object,)), }
 
     def on_close(self, *args):
@@ -172,7 +172,11 @@ class MainWindow(Gtk.ApplicationWindow):
         self.tweakPrivacy.update()
 
         ppas_to_install, ppas_to_remove = self.tweakRepositories.set_selected()
+        priv_to_install, priv_to_remove = \
+            self.tweakPrivacy.set_selected_packages()
         apps_to_install, apps_to_remove = self.tweakPackages.set_selected()
+        apps_to_install = apps_to_install + priv_to_install
+        apps_to_remove = apps_to_remove + priv_to_remove
         actions = len(ppas_to_install) + len(ppas_to_remove) + \
             len(apps_to_install) + len(apps_to_remove)
         if actions > 0:

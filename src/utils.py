@@ -1,4 +1,4 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 #
 # This file is part of ubuntu-first-steps
@@ -32,16 +32,7 @@ except Exception as e:
 from gi.repository import GLib
 import os
 import re
-import subprocess
-try:
-    from . import comun
-except Exception as e:
-    import sys
-    PACKAGE_PARENT = '..'
-    SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(),
-                                 os.path.expanduser(__file__))))
-    sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
-    import comun
+from plumbum import local
 
 
 def variant_to_value(variant):
@@ -66,7 +57,7 @@ def variant_to_value(variant):
         else:
             return variant.dup_strv()
     else:
-        print('error: unknown variant type: %s' %type_string)
+        print('error: unknown variant type: {}'.format(type_string))
     return variant
 
 
@@ -83,19 +74,21 @@ def get_selected_value_in_combo(combo):
     model = combo.get_model()
     return model.get_value(combo.get_active_iter(), 1)
 
+
 def is_running(process):
-    # From http://www.bloggerpolis.com/2011/05/\
-    # how-to-check-if-a-process-is-running-using-python/
-    # and http://richarddingwall.name/2009/06/18/\
-    # windows-equivalents-of-ps-and-kill-commands/
-    try:  # Linux/Unix
-        s = subprocess.Popen(["ps", "axw"], stdout=subprocess.PIPE)
-    except Exception as e:  # Windows
-        print(e)
-        s = subprocess.Popen(["tasklist", "/v"], stdout=subprocess.PIPE)
-    for x in s.stdout:
-        if re.search(process, x.decode()):
-            return True
+    ps = local['ps']
+    if re.search(process, ps['axw']()):
+        return True
+    return False
+
+
+def is_installed(package):
+    try:
+        dpkgquery = local['dpkg-query']
+        result = dpkgquery['-W', '-f=\'${Status}\'', package]()
+        return result == '\'install ok installed\''
+    except Exception:
+        pass
     return False
 
 
@@ -139,6 +132,7 @@ def get_desktop_environment():
     elif is_running("ksmserver"):
         return "kde"
     return "unknown"
+
 
 CSS = '''
 window hdycolumn box list row combobox{
