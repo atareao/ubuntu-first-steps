@@ -222,10 +222,10 @@ class TweakPrivacy(Gtk.Overlay):
     def set_selected_packages(self):
         to_install = []
         to_remove = []
-        if self.options[10].get_state is True:
+        if self.options[10].get_state() is True:
             if is_installed('popularity-contest') is False:
                 to_install.append('popularity-contest')
         else:
-            if is_installed('popularity_contest') is True:
+            if is_installed('popularity-contest') is True:
                 to_remove.append('popularity-contest')
         return to_install, to_remove

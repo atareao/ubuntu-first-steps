@@ -161,22 +161,22 @@ class MainWindow(Gtk.ApplicationWindow):
 
     def on_row_activated(self, lb, sidewidget):
         self.stack.set_visible_child_name(sidewidget.get_stack())
-    
+
     def on_apply_clicked(self, *args):
         self.tweakDock.set_selected()
         self.tweakDesktop.set_selected()
-        self.tweakPrivacy.set_selected()
 
         self.tweakDock.update()
         self.tweakDesktop.update()
-        self.tweakPrivacy.update()
 
         ppas_to_install, ppas_to_remove = self.tweakRepositories.set_selected()
         priv_to_install, priv_to_remove = \
             self.tweakPrivacy.set_selected_packages()
+        print(priv_to_remove)
         apps_to_install, apps_to_remove = self.tweakPackages.set_selected()
         apps_to_install = apps_to_install + priv_to_install
         apps_to_remove = apps_to_remove + priv_to_remove
+        print(apps_to_remove)
         actions = len(ppas_to_install) + len(ppas_to_remove) + \
             len(apps_to_install) + len(apps_to_remove)
         if actions > 0:
@@ -191,6 +191,8 @@ class MainWindow(Gtk.ApplicationWindow):
             outs, errs = process.communicate()
             self.tweakRepositories.update()
             self.tweakPackages.update()
+        self.tweakPrivacy.set_selected()
+        self.tweakPrivacy.update()
 
     def init_headerbar(self):
         self.control = {}
