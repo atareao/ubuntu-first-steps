@@ -16,8 +16,8 @@
 
 Before you begin, ensure you have met the following requirements:
 
-* If you install it from PPA don't worry about, becouse all the requirements are included in the package
-* If you clone the repository, you need, at least, these dependecies,
+* If you install it from PPA don't worry about, because all the requirements are included in the package
+* If you clone the repository, you need, at least, these dependencies,
 
 ```
 python3-gi
@@ -58,7 +58,7 @@ sudo apt install ubuntu-first-steps
 
 * Repositories
 
-![Repositorios](./screenshots/ubuntu-first-steps-screenshot-4.png)
+![Repositories](./screenshots/ubuntu-first-steps-screenshot-4.png)
 
 * Applications
 
