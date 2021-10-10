@@ -75,8 +75,8 @@ Linux firewall.',
 everything needed to create professional-quality computer art.',
                             'inkscape']
         self.packages[8] = ['Steam',
-                            'Inkscape is an illustration editor which has \
-everything needed to create professional-quality computer art',
+                            'Steam is a popular digital distribution platform \
+for video games by Valve.',
                             'steam']
         self.packages[9] = ['FileZilla',
                             'FileZilla is a complete FTP client.',
