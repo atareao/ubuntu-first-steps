@@ -1,0 +1,418 @@
+# Italian translations for Ubuntu-first-steps.
+# Copyright (C) 2019 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the start-here package.
+# ALbano Battistella <albano_battistella@hotmail.com>, 202i.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: start-here - 0.0.5-19.04ubuntu0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-04 11:15+0200\n"
+"PO-Revision-Date: 2021-08-08 11:51+0200\n"
+"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/installer.py:73
+msgid "Add ppa repository"
+msgstr "Aggiungi repository ppa"
+
+#: src/installer.py:120 src/installer.py:188
+msgid "Cancel"
+msgstr "Annulla"
+
+#: src/installer.py:136 src/installer.py:153
+msgid "Exit"
+msgstr "Esci"
+
+#: src/installer.py:139
+msgid "Installation completed!"
+msgstr "Installazione completata!"
+
+#: src/installer.py:142
+msgid "Installation NOT completed!"
+msgstr "Installazione NON completata!"
+
+#: src/installer.py:146 src/installer.py:187 src/installer.py:223
+msgid "Ok"
+msgstr "Ok"
+
+#: src/installer.py:164
+#, python-format
+msgid "Executing: %s"
+msgstr "In Esecuzione: %s"
+
+#: src/installer.py:185
+msgid "Do you want to stop the installation?"
+msgstr "Vuoi interrompere l'installazione?"
+
+#: src/installer.py:221
+msgid "You must be root to run this tool"
+msgstr "Devi essere root per eseguire questo strumento"
+
+#: src/tweak_repositories.py:106 src/mainwindow.py:115
+msgid "Repositories"
+msgstr "Repository"
+
+#: src/tweak_desktop.py:65 src/mainwindow.py:109
+msgid "Custom desktop"
+msgstr "Desktop personalizzato"
+
+#: src/tweak_desktop.py:79
+msgid "Small"
+msgstr "Piccolo"
+
+#: src/tweak_desktop.py:80
+msgid "Standard"
+msgstr "Standard"
+
+#: src/tweak_desktop.py:81
+msgid "Large"
+msgstr "Grande"
+
+#: src/tweak_desktop.py:89
+msgid "Icon size"
+msgstr "Dimensione icona"
+
+#: src/tweak_desktop.py:90
+msgid "Set the icon size on the desktop."
+msgstr "Imposta la dimensione dell'icona sul desktop."
+
+#: src/tweak_desktop.py:93
+msgid "Hide home"
+msgstr "Nascondi HOme"
+
+#: src/tweak_desktop.py:94
+msgid "Hide your user folder."
+msgstr "Nascondi la tua cartella utente."
+
+#: src/tweak_desktop.py:97
+msgid "Hide trash"
+msgstr "Nascondi cestino"
+
+#: src/tweak_desktop.py:98
+msgid "Hide the trash folder."
+msgstr "Nascondi la cartella del cestino."
+
+#: src/tweak_desktop.py:101
+msgid "Calendar"
+msgstr "Calendario"
+
+#: src/tweak_desktop.py:113
+msgid "Show week number"
+msgstr "Mostra il numero della settimana"
+
+#: src/tweak_desktop.py:114
+msgid "Show week number in calendar."
+msgstr "Mostra il numero della settimana nel calendario."
+
+#: src/tweak_desktop.py:117
+msgid "Hide date"
+msgstr "Nascondi data"
+
+#: src/tweak_desktop.py:118
+msgid "Hide date in the watch"
+msgstr "Nascondi la data nell'orologio"
+
+#: src/tweak_desktop.py:121
+msgid "Show seconds"
+msgstr "Mostra secondi"
+
+#: src/tweak_desktop.py:122
+msgid "Show seconds in the watch"
+msgstr "Mostra i secondi nell'orologio"
+
+#: src/tweak_desktop.py:125
+msgid "Show weekday"
+msgstr "Mostra giorno della settimana"
+
+#: src/tweak_desktop.py:126
+msgid "Show weekday in the watch"
+msgstr "Mostra il giorno della settimana nell'orologio"
+
+#: src/tweak_desktop.py:129
+msgid "Battery"
+msgstr "Battería"
+
+#: src/tweak_desktop.py:140
+msgid "Show battery percentage"
+msgstr "Mostra la percentuale della batteria"
+
+#: src/tweak_desktop.py:141
+msgid "Show battery percentage."
+msgstr "Mostra la percentuale della batteria."
+
+#: src/tweak_desktop.py:144
+msgid "Experimental"
+msgstr "Sperimentale"
+
+#: src/tweak_desktop.py:155
+msgid "Enable HiDPI Fractional Scaling"
+msgstr "Abilita il ridimensionamento HiDPI frazionario"
+
+#: src/tweak_desktop.py:156
+msgid "Enable experimenal HiDPI Fractional Scaling."
+msgstr "Abilita il ridimensionamento HiDPI frazionario."
+
+#: src/tweak_privacy.py:58
+msgid "Peripherals"
+msgstr "Periferiche"
+
+#: src/tweak_privacy.py:71
+msgid "Disable camera"
+msgstr "Disabilita camera"
+
+#: src/tweak_privacy.py:72
+msgid "Avoid applications to use the camera."
+msgstr "Evita applicazioni per utilizzare la fotocamera."
+
+#: src/tweak_privacy.py:74
+msgid "Disable microphone"
+msgstr "Disattiva microfono"
+
+#: src/tweak_privacy.py:75
+msgid "Avoid applications to use the microphone."
+msgstr "Evita applicazioni per usare il microfono."
+
+#: src/tweak_privacy.py:77
+msgid "Disable sound outp"
+msgstr "Disattiva uscita audio"
+
+#: src/tweak_privacy.py:78
+msgid "Avoid applications to play sound."
+msgstr "Evita applicazioni per riprodurre suoni."
+
+#: src/tweak_privacy.py:81
+msgid "Identity"
+msgstr "Identità"
+
+#: src/tweak_privacy.py:92
+msgid "Hide identity"
+msgstr "Nascondi identità"
+
+#: src/tweak_privacy.py:93
+msgid "Hide personal information."
+msgstr "Nascondi le informazioni personali."
+
+#: src/tweak_privacy.py:96
+msgid "Remember"
+msgstr "Recorda"
+
+#: src/tweak_privacy.py:108
+msgid "Forget application usage"
+msgstr "Dimentica l'utilizzo dell'applicazione"
+
+#: src/tweak_privacy.py:109
+msgid "Forget application usage."
+msgstr "Dimentica l'utilizzo dell'applicazione."
+
+#: src/tweak_privacy.py:112
+msgid "Forget recent files"
+msgstr "Dimentica i file recenti"
+
+#: src/tweak_privacy.py:113
+msgid "Forget recent files."
+msgstr "Dimentica i file recenti."
+
+#: src/tweak_privacy.py:116
+msgid "Remove temporary files"
+msgstr "Rimuovi i file temporanei"
+
+#: src/tweak_privacy.py:117
+msgid "Remove old temporary files automatically."
+msgstr "Rimuovi automaticamente i vecchi file temporanei."
+
+#: src/tweak_privacy.py:120
+msgid "Remove trash files"
+msgstr "Rimuovi i file nel cestino"
+
+#: src/tweak_privacy.py:121
+msgid "Remove old trash files automatically."
+msgstr "Rimuovi automaticamente i vecchi file nel cestino."
+
+#: src/tweak_privacy.py:124
+msgid "Statistics"
+msgstr "Statistiche"
+
+#: src/tweak_privacy.py:136
+msgid "Send technical problems"
+msgstr "Invia problemi tecnici"
+
+#: src/tweak_privacy.py:137
+msgid "Send technical problems."
+msgstr "Invia problemi tecnici."
+
+#: src/tweak_privacy.py:140
+msgid "Send software usage"
+msgstr "Invia utilizzo software"
+
+#: src/tweak_privacy.py:141
+msgid "Send softwarew usage statistics."
+msgstr "Invia statistiche sull'utilizzo del software."
+
+#: src/tweak_privacy.py:144
+msgid "Ubuntu popularity contest"
+msgstr "Concorso di popolarità di Ubuntu"
+
+#: src/tweak_privacy.py:145
+msgid "Send information about installed packages"
+msgstr "Invia informazioni sui pacchetti installati"
+
+#: src/tweak_packages.py:113 src/mainwindow.py:118
+msgid "Applications"
+msgstr "Applicazioni"
+
+#: src/tweak_dock.py:65 src/mainwindow.py:106
+msgid "Custom dock"
+msgstr "Personalizza dock"
+
+#: src/tweak_dock.py:79
+msgid "Left"
+msgstr "Sinistra"
+
+#: src/tweak_dock.py:80
+msgid "Right"
+msgstr "Destra"
+
+#: src/tweak_dock.py:81
+msgid "Top"
+msgstr "Alto"
+
+#: src/tweak_dock.py:82
+msgid "Bottom"
+msgstr "Basso"
+
+#: src/tweak_dock.py:90
+msgid "Dock position"
+msgstr "Posizione della dock"
+
+#: src/tweak_dock.py:91
+msgid "Set the dock position on the screen."
+msgstr "Imposta la posizione del dock sullo schermo."
+
+#: src/tweak_dock.py:94
+msgid "Enable minimize click action"
+msgstr "Abilita minimizzazione clic"
+
+#: src/tweak_dock.py:95
+msgid "Minimize when clicking on a running app."
+msgstr "Riduci a icona quando fai clic su un'app in esecuzione."
+
+#: src/tweak_dock.py:98
+msgid "Reduce dock length"
+msgstr "Riduci dimensioni del dock"
+
+#: src/tweak_dock.py:99
+msgid "Reduce the dock container to icons."
+msgstr "Riduci a icona il dock per contenere le icone"
+
+#: src/tweak_dock.py:102
+msgid "Force straight corner"
+msgstr "Forza angoli dritti"
+
+#: src/tweak_dock.py:103
+msgid "Make the borders in the dash non rounded."
+msgstr "Rendi i bordi nella dash non arrotondati."
+
+#: src/tweak_dock.py:118
+msgid "Isolate monitors"
+msgstr "Isola monitor"
+
+#: src/tweak_dock.py:119
+msgid "Provide monitor isolation"
+msgstr "Provvede l'isolamento del monitor"
+
+#: src/tweak_dock.py:121
+msgid "Multi monitor"
+msgstr "Multi monitor"
+
+#: src/tweak_dock.py:122
+msgid "Enable multi monitor dock"
+msgstr "Habilita el dock en varios monitores"
+
+#: src/tweak_dock.py:137 src/tweak_dock.py:138
+msgid "Hide applications button"
+msgstr "Nascondi il pulsante delle applicazioni"
+
+#: src/tweak_dock.py:140
+msgid "Show apps at top"
+msgstr "Mostra app in alto"
+
+#: src/tweak_dock.py:141
+msgid "Show application button at top"
+msgstr "Mostra il pulsante dell'applicazione in alto"
+
+#: src/tweak_dock.py:143
+msgid "Hide favorites"
+msgstr "Nascondi preferiti"
+
+#: src/tweak_dock.py:144
+msgid "Hide favorites apps"
+msgstr "Nascondi app preferite"
+
+#: src/tweak_dock.py:146
+msgid "Hide running"
+msgstr "Nascondi in esecuzione"
+
+#: src/tweak_dock.py:147
+msgid "Hide running apps"
+msgstr "Nascondi app in esecuzione"
+
+#: src/application.py:55
+msgid "ubuntu-first-steps"
+msgstr "ubuntu-fist-steps"
+
+#: src/application.py:151
+msgid "First steps in Ubuntu"
+msgstr "Primi passi in Ubuntu"
+
+#: src/mainwindow.py:112
+msgid "Privacy"
+msgstr "Privacy"
+
+#: src/mainwindow.py:209
+msgid "Apply changes"
+msgstr "Applica modifiche"
+
+#: src/mainwindow.py:218
+msgid "Homepage"
+msgstr "Homepage"
+
+#: src/mainwindow.py:223
+msgid "Code"
+msgstr "Codice"
+
+#: src/mainwindow.py:224
+msgid "Issues"
+msgstr "Problemi"
+
+#: src/mainwindow.py:229
+msgid "Twitter"
+msgstr "Twitter"
+
+#: src/mainwindow.py:230
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/mainwindow.py:235
+msgid "Donations"
+msgstr "Donazioni"
+
+#: src/mainwindow.py:240
+msgid "About"
+msgstr "Inoformazioni"
+
+#: src/mainwindow.py:245
+msgid "Quit"
+msgstr "Esci"
+
+#: src/mainwindow.py:250
+msgid "Help"
+msgstr "Aiuto"
+
+#~ msgid "start-here"
+#~ msgstr "Primi passi"
